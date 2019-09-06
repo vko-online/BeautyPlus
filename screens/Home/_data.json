@@ -1,0 +1,258 @@
+[
+    {
+        "title": "Low carb",
+        "data": [
+            {
+                "title": "Low carb for beginners",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/01/LowCarbMobile.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "The most popular page on the internet to get started learning about low carb. Everything in one place.\n"
+            },
+            {
+                "title": "Low-carb recipes",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/03/ButterChicken_H.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Recipe collection",
+                "description": "Whether you’re looking for strict keto, moderate or liberal low-carb recipes, here you have over 700 delicious low-carb recipes to choose from.\n"
+            },
+            {
+                "title": "All low-carb guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/12/Question-mark-guide.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Do you want to learn more about a specific low-carb topic? How do you dine out or eat more fat? Is low carb safe? Here’s a collection of all our guides.\n"
+            },
+            {
+                "title": "Low-carb meal plans",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/02/Jill-kitchen-16-9.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Over 100 weekly meal plans with shopping lists. Customize them any way you like, using any of our recipes. Or just use them – succeed in eating low carb with no planning!\n"
+            },
+            {
+                "title": "Visual guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/LC-BG-veggies-16-9-1.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Which vegetables are best on a low-carb diet, can you have berries and which nuts have the fewest carbs? Check out our popular visual guides to make better choices!\n"
+            },
+            {
+                "title": "Low-carb video",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/Living-low-carb-with-Jill-Rieder-Short-Doc-2018_new.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Video",
+                "description": "Over 500 amazing low-carb videos, including video courses, movies, docs, presentations, interviews and cooking videos.\n"
+            },
+            {
+                "title": "600+ success stories",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2016/06/my_1yr.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Success story",
+                "description": "Get inspired by hundreds of stories written by people that changed their lives for the better just by eating real food. \n"
+            },
+            {
+                "title": "Medical doctors recommending a low-carb or ketogenic diet",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/02/Medical-doctors.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "The expanding low-carb medical community speaks to the power of the low-carb diet.\n"
+            },
+            {
+                "title": "For doctors",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/for-doctors-mobile2.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "Are you a doctor and you want to help your patients do a low-carb diet in a safe and effective way? Learn what you need to know here.\n"
+            }
+        ]
+    },
+    {
+        "title": "Keto",
+        "data": [
+            {
+                "title": "Keto for beginners",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/01/LowCarbMobile.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "The most popular page on the internet to get started learning about keto. Everything in one place.\n"
+            },
+            {
+                "title": "Keto recipes",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2016/06/DD-132.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Recipe collection",
+                "description": "Looking for simple and tasty keto (very low-carb) recipes? You’ve come to the right place. We have an arsenal of marvellous recipes to browse — over 300!\n"
+            },
+            {
+                "title": "All keto guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/12/Question-mark-guide.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Do you want to learn more about a specific keto topic? How do you dine out or eat more fat? Is keto safe? Here’s a collection of all our guides.\n"
+            },
+            {
+                "title": "Keto meal plans",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/01/Mealplan_desktop.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Over 60 weekly meal plans with shopping lists. Use them as the are, or customize them any way you like, using any of our recipes.\n"
+            },
+            {
+                "title": "Visual guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/LC-BG-veggies-16-9-1.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Which vegetables are best on a keto diet, can you have berries and which nuts have the fewest carbs? Check out our popular visual guides to make better choices!\n"
+            },
+            {
+                "title": "Get started",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/06/DD_challenge_run.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "Do you want free daily assistance in getting started, with everything planned? Then sign up for our 2-week keto challenge, like over 600,000 people have already done. \n"
+            },
+            {
+                "title": "Keto videos",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/keto-videos-Andreas-Eenfeldt-Part1-Andreas-Edits.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Video",
+                "description": "Watch our top keto videos, including courses, presentations, interviews and success stories.\n"
+            },
+            {
+                "title": "Keto success stories",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/04/suzanne-featured.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Success story",
+                "description": "People have sent us thousands of keto success stories. Here are some of the most amazing and inspiring personal stories from the over 250 we have published.\n"
+            }
+        ]
+    },
+    {
+        "title": "Recipes & food",
+        "data": [
+            {
+                "title": "All low-carb recipes",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/03/ButterChicken_H.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Recipe collection",
+                "description": "Whether you’re looking for strict keto, moderate or liberal low-carb recipes, here you have over 700 delicious low-carb recipes to choose from.\n"
+            },
+            {
+                "title": "All low-carb meal plans",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/02/Jill-kitchen-16-9.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Over 100 weekly meal plans with shopping lists. Use them as the are, or customize them any way you like, using any of our recipes.\n"
+            },
+            {
+                "title": "Low-carb cooking videos",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/Kristie-Sarah.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Video",
+                "description": "Learn how to cook delicious low-carb or keto meals with Kristie Sullivan, or using our helpful 1-minute cooking videos.\n"
+            }
+        ]
+    },
+    {
+        "title": "Intermittent fasting",
+        "data": [
+            {
+                "title": "Intermittent fasting for beginners",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2016/01/iStock_34083318_XXLARGE.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "Learn everything you need about intermittent fasting, in our popular main guide.\n"
+            },
+            {
+                "title": "Videos",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/JF.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Video",
+                "description": "Watch our top intermittent fasting videos, including courses with Dr. Jason Fung, presentations, interviews and success stories.\n"
+            },
+            {
+                "title": "All intermittent fasting guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2015/06/GettyImages-499394100.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Do you want to know more about shorter or longer fasting schedules? Practical tips? Or the effects of fasting on different health issues? Learn more here.\n"
+            },
+            {
+                "title": "Success stories",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2017/10/christine.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Success story",
+                "description": "People have sent us hundreds of intermittent fasting success stories. You’ll find some of the most inspiring ones here.\n"
+            }
+        ]
+    },
+    {
+        "title": "Weight loss",
+        "data": [
+            {
+                "title": "How to lose weight",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/scale-lose-weight-mobile.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "Learn about the top 18 weight-loss tips… though perhaps you only need to use one or two.\n"
+            },
+            {
+                "title": "Keto meal plans",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/01/Mealplan_desktop.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Are you looking for meal plans that promote weight loss? Any of our 60+ weekly keto plans with shopping lists are a good choice.\n"
+            },
+            {
+                "title": "Get started on keto",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/06/DD_challenge_run.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "Do you want to lose weight with a keto diet? Get free daily assistance in getting started, with everything planned – and it’s free.\n"
+            },
+            {
+                "title": "Success stories",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/05/kimberly-1.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Success story",
+                "description": "People have sent us thousands of weight-loss success stories. Here are some of the most amazing and inspiring personal stories from the over 600 we have published.\n"
+            },
+            {
+                "title": "All weight-loss guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2017/09/GettyImages-507961898.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Do you want to learn more about a specific weight-loss topic? How to lose weight for women after 40? How to think about calories? Here’s a collection of all our guides.\n"
+            },
+            {
+                "title": "Weight-loss videos",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/wl-1.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Video",
+                "description": "Watch our top weight loss videos, including a course with Dr. Andreas Eenfeldt, presentations, interviews and success stories.\n"
+            }
+        ]
+    },
+    {
+        "title": "Membership",
+        "data": [
+            {
+                "title": "About membership",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/Want_more3.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Find all the many benefits of membership here. It’s free to try for month. Benefits include access to meal plans and meal planner, our amazing community, all full videos, saving favorites, early access, ask the experts, insider column and supporting our free site.\n"
+            }
+        ]
+    },
+    {
+        "title": "News & podcast",
+        "data": [
+            {
+                "title": "News",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/DDnews.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "News",
+                "description": "Find daily low-carb news reporting, and everything new at Diet Doctor here.\n"
+            },
+            {
+                "title": "Diet Doctor Podcast",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/Bret-podcast-16-9.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Dr. Bret Scher interviews guests every week. The goal is to empower people everywhere to revolutionize their health, by making low carb simple.\n"
+            }
+        ]
+    },
+    {
+        "title": "Health",
+        "data": [
+            {
+                "title": "All health guides",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/10/Doctor-handshake.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "In addition to weight loss, a low-carb or keto diet can potentially improve your health and quality of life in many ways. Learn more in these guides.\n"
+            },
+            {
+                "title": "How to reverse type 2 diabetes",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2013/11/DiabetesPage.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "type": "Guide",
+                "description": "ype 2 diabetes is a potentially reversible, dietary disease. Learn how to do it here.\n"
+            }
+        ]
+    },
+    {
+        "title": "About",
+        "data": [
+            {
+                "title": "About Diet Doctor",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/dd-about-169.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Learn more about the Diet Doctor company, and our mission of empowering people everywhere\n"
+            },
+            {
+                "title": "This is Team Diet Doctor",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2018/09/DD_working_people-16-9.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Are you curious about the bright creatives behind Diet Doctor? Take a look at our team members and collaborators.\n"
+            },
+            {
+                "title": "Careers at Diet Doctor",
+                "image": "https://i.dietdoctor.com/wp-content/uploads/2019/01/Careers.jpg?auto=compress%2Cformat&w=800&h=450&fit=crop",
+                "description": "Do you want a deeply meaningful job where you can grow, make a big impact and own part of the company we create together? Take a look at our open positions – we’re hiring!\n"
+            }
+        ]
+    }
+]

@@ -25,6 +25,7 @@ export default {
 
 export const theme: Theme = {
   ...DefaultTheme,
+  roundness: 1,
   colors: {
     ...DefaultTheme.colors,
     primary: primary,

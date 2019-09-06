@@ -8,7 +8,3 @@ export default function Screen () {
    */
   return <ExpoConfigView />
 }
-
-Screen.navigationOptions = {
-  title: 'app.json'
-}

@@ -52,7 +52,7 @@ class DrawerComponent extends PureComponent<Props, State> {
           <Drawer.Item label='My account' icon='account-circle' />
         </Drawer.Section>
         <Drawer.Section>
-          <Drawer.Item label='Premium' icon='checkbox-marked' onPress={() => navigation.navigate('About')} />
+          <Drawer.Item label='Premium' icon='check' onPress={() => navigation.navigate('About')} />
         </Drawer.Section>
         <Drawer.Item label='Log out' icon='exit-to-app' onPress={this.showDialog} />
         <Portal>
