@@ -4,7 +4,7 @@ import { createStackNavigator, createBottomTabNavigator, StackNavigatorConfig, c
 
 import Drawer from './drawer'
 import TabBarIcon from '../components/TabBarIcon'
-import Screen from '../screens/Home'
+import Home from '../screens/Home'
 import ExploreScreen from '../screens/Explore'
 import RecipesScreen from '../screens/Recipes'
 import MealplanScreen from '../screens/Mealplan'
@@ -19,7 +19,7 @@ const config: StackNavigatorConfig = Platform.select({
 
 const HomeStack: any = createStackNavigator(
   {
-    Home: Screen
+    Home
   },
   config
 )

@@ -10,8 +10,14 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "src": ["./src"],
-      "src/*": ["./src/*"]
+      "assets": ["./assets"],
+      "assets/*": ["./assets/*"],
+      "constants": ["./constants"],
+      "constants/*": ["./constants/*"],
+      "screens": ["./screens"],
+      "screens/*": ["./screens/*"],
+      "components": ["./components"],
+      "components/*": ["./components/*"]
     },
     "resolveJsonModule": true
   }

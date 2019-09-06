@@ -12,7 +12,7 @@ import { Headline, Appbar, Button, Searchbar, Avatar } from 'react-native-paper'
 import * as WebBrowser from 'expo-web-browser'
 import { NavigationScreenProp } from 'react-navigation'
 
-import { MonoText } from '../components/StyledText'
+import { MonoText } from 'components/StyledText'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -47,8 +47,8 @@ export default function Screen ({ navigation }: Props) {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
+                ? require('assets/images/robot-dev.png')
+                : require('assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
           />

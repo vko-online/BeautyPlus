@@ -30,7 +30,7 @@ class DrawerComponent extends PureComponent<Props, State> {
   renderUser = () => {
     return (
       <Hpane padding={20} justifyContent='flex-start' alignItems='center'>
-        <Avatar.Image source={require('../assets/images/robot-dev.png')} />
+        <Avatar.Image source={require('assets/images/robot-dev.png')} />
         <Vpane marginLeft={20}>
           <Subheading>Medet Tleukabiluly</Subheading>
           <Caption>747 91 991 53</Caption>

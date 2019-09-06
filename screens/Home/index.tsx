@@ -15,7 +15,7 @@ import { NavigationScreenProp } from 'react-navigation'
 
 import Post from './Post'
 import data from './_data.json'
-import { lightGray, extraExtraLightGray } from '../../constants/Colors'
+import { lightGray, extraExtraLightGray } from 'constants/Colors'
 function noop () {
   // noop
 }
@@ -37,7 +37,7 @@ export default function Screen ({ navigation }: Props) {
     <View style={s.container}>
       <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
         <TouchableOpacity onPress={navigation.openDrawer}>
-          <Avatar.Image size={40} source={require('../../assets/images/robot-dev.png')} />
+          <Avatar.Image size={40} source={require('assets/images/robot-dev.png')} />
         </TouchableOpacity>
         <Appbar.Content title='Discover' />
         <Appbar.Action icon='settings' />

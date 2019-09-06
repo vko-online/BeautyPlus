@@ -33,6 +33,7 @@
     "view-on-steroids": "^1.6.4"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.18",
     "babel-preset-expo": "^6.0.0",
     "jest-expo": "^34.0.0",
     "tslint": "^5.19.0",
