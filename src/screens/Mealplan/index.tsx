@@ -11,9 +11,9 @@ export default function Screen ({ navigation }: Props) {
     <View style={s.container}>
       <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
         <TouchableOpacity onPress={navigation.openDrawer}>
-          <Avatar.Image size={40} source={require('assets/images/robot-dev.png')} />
+          <Avatar.Image size={40} source={require('src/assets/images/robot-dev.png')} />
         </TouchableOpacity>
-        <Appbar.Content title='Recipes' />
+        <Appbar.Content title='Meal plans' />
         <Appbar.Action icon='settings' />
       </Appbar.Header>
     </View>

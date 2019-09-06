@@ -3,14 +3,14 @@ import { Platform, Image, StyleSheet } from 'react-native'
 import { createStackNavigator, createBottomTabNavigator, StackNavigatorConfig, createDrawerNavigator } from 'react-navigation'
 
 import Drawer from './drawer'
-import TabBarIcon from '../components/TabBarIcon'
-import Home from '../screens/Home'
-import ExploreScreen from '../screens/Explore'
-import RecipesScreen from '../screens/Recipes'
-import MealplanScreen from '../screens/Mealplan'
-import AboutScreen from '../screens/About'
+import TabBarIcon from 'src/components/TabBarIcon'
+import Home from 'src/screens/Home'
+import ExploreScreen from 'src/screens/Explore'
+import RecipesScreen from 'src/screens/Recipes'
+import MealplanScreen from 'src/screens/Mealplan'
+import AboutScreen from 'src/screens/About'
 
-import { black, activeIcon } from '../constants/Colors'
+import { black, activeIcon } from 'src/constants/Colors'
 
 const config: StackNavigatorConfig = Platform.select({
   web: { headerMode: 'screen' },
@@ -27,9 +27,9 @@ const HomeStack: any = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('../assets/icons/home.png')} />
+      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/home.png')} />
     }
-    return <Image style={s.icon} source={require('../assets/icons/home.png')} />
+    return <Image style={s.icon} source={require('src/assets/icons/home.png')} />
   }
 }
 
@@ -45,9 +45,9 @@ const ExploreStack: any = createStackNavigator(
 ExploreStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('../assets/icons/search.png')} />
+      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/search.png')} />
     }
-    return <Image style={s.icon} source={require('../assets/icons/search.png')} />
+    return <Image style={s.icon} source={require('src/assets/icons/search.png')} />
   }
 }
 
@@ -63,9 +63,9 @@ const RecipesStack: any = createStackNavigator(
 RecipesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('../assets/icons/recipes.png')} />
+      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/recipes.png')} />
     }
-    return <Image style={s.icon} source={require('../assets/icons/recipes.png')} />
+    return <Image style={s.icon} source={require('src/assets/icons/recipes.png')} />
   }
 }
 
@@ -81,9 +81,9 @@ const MealplanStack: any = createStackNavigator(
 MealplanStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('../assets/icons/mealplan.png')} />
+      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/mealplan.png')} />
     }
-    return <Image style={s.icon} source={require('../assets/icons/mealplan.png')} />
+    return <Image style={s.icon} source={require('src/assets/icons/mealplan.png')} />
   }
 }
 

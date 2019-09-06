@@ -10,12 +10,11 @@ import {
   SectionListData
 } from 'react-native'
 import { Headline, Appbar, Button, Title, Avatar, Banner } from 'react-native-paper'
-import * as WebBrowser from 'expo-web-browser'
 import { NavigationScreenProp } from 'react-navigation'
 
 import Post from './Post'
 import data from './_data.json'
-import { lightGray, extraExtraLightGray } from 'constants/Colors'
+import { lightGray, extraExtraLightGray } from 'src/constants/Colors'
 function noop () {
   // noop
 }
@@ -37,7 +36,7 @@ export default function Screen ({ navigation }: Props) {
     <View style={s.container}>
       <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
         <TouchableOpacity onPress={navigation.openDrawer}>
-          <Avatar.Image size={40} source={require('assets/images/robot-dev.png')} />
+          <Avatar.Image size={40} source={require('src/assets/images/robot-dev.png')} />
         </TouchableOpacity>
         <Appbar.Content title='Discover' />
         <Appbar.Action icon='settings' />

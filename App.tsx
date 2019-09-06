@@ -5,9 +5,8 @@ import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
-import { theme } from './constants/Colors'
-
-import AppNavigator from './navigation/AppNavigator'
+import { theme } from 'src/constants/Colors'
+import AppNavigator from 'src/navigation/AppNavigator'
 
 export default function App (props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
@@ -35,18 +34,18 @@ export default function App (props) {
 async function loadResourcesAsync () {
   await Promise.all([
     Asset.loadAsync([
-      require('./assets/images/robot-dev.png'),
-      require('./assets/images/robot-prod.png')
+      require('src/assets/images/robot-dev.png'),
+      require('src/assets/images/robot-prod.png')
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
       ...Ionicons.font,
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
-      'montserrat-light': require('./assets/fonts/Montserrat-Light.ttf'),
-      'montserrat-thin': require('./assets/fonts/Montserrat-Thin.ttf'),
-      'montserrat-medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-      'montserrat-regular': require('./assets/fonts/Montserrat-Regular.ttf')
+      'montserrat-light': require('src/assets/fonts/Montserrat-Light.ttf'),
+      'montserrat-thin': require('src/assets/fonts/Montserrat-Thin.ttf'),
+      'montserrat-medium': require('src/assets/fonts/Montserrat-Medium.ttf'),
+      'montserrat-regular': require('src/assets/fonts/Montserrat-Regular.ttf')
     })
   ])
 }
