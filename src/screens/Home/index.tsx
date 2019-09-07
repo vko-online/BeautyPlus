@@ -9,12 +9,12 @@ import {
 import { Button, TouchableRipple, Subheading, Caption, IconButton } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import BottomSheet from 'react-native-raw-bottom-sheet'
+import { Hpane, Vpane } from 'view-on-steroids'
 import { extraExtraLightGray, darkGray } from 'src/constants/Colors'
 import Header from 'src/components/Header'
 import Post from './Post'
 import data from './_data.json'
 import Sheet from './Sheet'
-import { Hpane, Vpane } from 'view-on-steroids';
 function noop () {
   // noop
 }
