@@ -6,11 +6,12 @@ import {
   SectionList,
   SectionListData
 } from 'react-native'
-import { Button, TouchableRipple, Subheading, Caption, IconButton } from 'react-native-paper'
+import { Button, TouchableRipple, Subheading, Caption, IconButton, Headline, Surface } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import BottomSheet from 'react-native-raw-bottom-sheet'
 import { Hpane, Vpane } from 'view-on-steroids'
-import { extraExtraLightGray, darkGray } from 'src/constants/Colors'
+// import SvgUri from 'react-native-svg-uri'
+import { extraExtraLightGray, darkGray, extraLightGray } from 'src/constants/Colors'
 import Header from 'src/components/Header'
 import Post from './Post'
 import data from './_data.json'
@@ -22,10 +23,22 @@ interface IHeader {
   section: SectionListData<{ title: string }>
 }
 function SectionHeader ({ section: { title } }: IHeader) {
-  return null
-}
-function ItemSeparator () {
-  return <View style={{ backgroundColor: extraExtraLightGray, height: 10, width: '100%' }} />
+  return (
+    <View style={s.header}>
+      <View style={[s.surface, { top: 2, right: 0, left: 35 }]}>
+        <Headline style={{ color: '#fff' }}>{title}</Headline>
+      </View>
+      <View style={[s.surface, { top: 3, right: 3, left: 22 }]}>
+        <Headline style={{ color: '#fff' }}>{title}</Headline>
+      </View>
+      <View style={[s.surface, { top: 6, right: 6, left: 10 }]}>
+        <Headline style={{ color: '#fff' }}>{title}</Headline>
+      </View>
+      <View style={[s.surface, { top: 10, right: 9, left: 0 }]}>
+        <Headline style={{ color: '#fff' }}>{title}</Headline>
+      </View>
+    </View>
+  )
 }
 
 interface Props {
@@ -38,18 +51,41 @@ export default function Screen ({ navigation }: Props) {
     <View style={s.container}>
       <Header title='Discover' onPress={() => filterSheetRef.current.open()} />
       <SectionList
-        style={{ paddingHorizontal: 10, backgroundColor: extraExtraLightGray }}
+        style={s.list}
         sections={data}
         renderSectionHeader={SectionHeader}
-        ItemSeparatorComponent={ItemSeparator}
-        renderItem={({ item, index }) => (
-          <Post
-            key={index}
-            post={item}
-            onPress={noop}
-            onRightPress={() => bottomSheetRef.current.open()}
-          />
-        )}
+        // ItemSeparatorComponent={ItemSeparator}
+        renderItem={({ section, index }) => {
+          if (index % 2 !== 0) return null
+          let items = []
+          for (let i = index; i < index + 2; i++) {
+            if (i >= section.data.length) {
+              break
+            }
+
+            items.push((
+              <Post
+                key={i}
+                post={section.data[i]}
+                onPress={noop}
+                onRightPress={() => bottomSheetRef.current.open()}
+              />
+            ))
+          }
+
+          return (
+            <View
+              key={index}
+              style={{
+                paddingHorizontal: 3,
+                flexDirection: 'row',
+                justifyContent: 'flex-start'
+              }}
+            >
+              {items}
+            </View>
+          )
+        }}
         initialNumToRender={3}
       />
       <Sheet refItem={filterSheetRef} height={310}>
@@ -124,6 +160,9 @@ const s = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
+  list: {
+    backgroundColor: extraExtraLightGray
+  },
   sheet: {
     justifyContent: 'center',
     alignItems: 'center'
@@ -131,5 +170,25 @@ const s = StyleSheet.create({
   sortingText: {
     fontFamily: 'montserrat-medium',
     color: 'rgb(101, 119, 134)'
+  },
+  header: {
+    position: 'relative',
+    marginHorizontal: 3,
+    height: 60
+  },
+  surface: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#999',
+    borderBottomWidth: 0,
+    paddingVertical: 10,
+    backgroundColor: '#434343',
+    paddingHorizontal: 15
   }
 })

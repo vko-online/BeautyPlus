@@ -27,9 +27,9 @@ const HomeStack: any = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/home.png')} />
+      return <Image style={[s.iconHome, s.active]} source={require('src/assets/icons/home.png')} />
     }
-    return <Image style={s.icon} source={require('src/assets/icons/home.png')} />
+    return <Image style={s.iconHome} source={require('src/assets/icons/home.png')} />
   }
 }
 
@@ -45,9 +45,9 @@ const ExploreStack: any = createStackNavigator(
 ExploreStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/search.png')} />
+      return <Image style={[s.iconSearch, s.active]} source={require('src/assets/icons/search.png')} />
     }
-    return <Image style={s.icon} source={require('src/assets/icons/search.png')} />
+    return <Image style={s.iconSearch} source={require('src/assets/icons/search.png')} />
   }
 }
 
@@ -81,9 +81,9 @@ const MealplanStack: any = createStackNavigator(
 MealplanStack.navigationOptions = {
   tabBarIcon: ({ focused }) => {
     if (focused) {
-      return <Image style={[s.icon, s.active]} source={require('src/assets/icons/mealplan.png')} />
+      return <Image style={[s.iconMealplan, s.active]} source={require('src/assets/icons/mealplan.png')} />
     }
-    return <Image style={s.icon} source={require('src/assets/icons/mealplan.png')} />
+    return <Image style={s.iconMealplan} source={require('src/assets/icons/mealplan.png')} />
   }
 }
 
@@ -114,8 +114,23 @@ rootNavigator.path = ''
 
 const s = StyleSheet.create({
   icon: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
+    tintColor: black
+  },
+  iconHome: {
+    width: 52,
+    height: 52,
+    tintColor: black
+  },
+  iconSearch: {
+    width: 36,
+    height: 36,
+    tintColor: black
+  },
+  iconMealplan: {
+    width: 42,
+    height: 42,
     tintColor: black
   },
   active: {

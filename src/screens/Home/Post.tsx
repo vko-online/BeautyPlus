@@ -1,6 +1,8 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { Dimensions } from 'react-native'
 import { Card, Badge, Paragraph, Button, IconButton } from 'react-native-paper'
+
+const { width } = Dimensions.get('window')
 
 export interface IPost {
   title: string
@@ -24,7 +26,7 @@ function Post ({
   }
 }: Props) {
   return (
-    <Card onPress={onPress} elevation={0} style={{ backgroundColor: '#fff' }}>
+    <Card onPress={onPress} elevation={0} style={{ backgroundColor: '#fff', width: width / 2 - 9, margin: 3 }}>
       <Card.Title
         title={title}
         right={({ size }) => (
@@ -38,7 +40,7 @@ function Post ({
       <Card.Content>
         <Card.Cover source={{ uri: image }} />
         { Boolean(description) && (
-          <Paragraph numberOfLines={3}>
+          <Paragraph numberOfLines={2}>
             { Boolean(type) && <Badge style={{ marginRight: 5 }} size={30}>{type}</Badge> }
             {description}
           </Paragraph>
