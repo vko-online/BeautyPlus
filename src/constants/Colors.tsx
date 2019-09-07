@@ -3,6 +3,7 @@ import { DefaultTheme, Theme } from 'react-native-paper'
 export const tintColor = '#2f95dc'
 export const activeIcon = '#1DA1F2'
 export const primary = '#1DA1F2'
+export const primaryDark = '#333333'
 export const black = '#14171A'
 export const darkGray = '#657786'
 export const lightGray = '#AAB8C2'
@@ -26,6 +27,7 @@ export default {
 export const theme: Theme = {
   ...DefaultTheme,
   roundness: 1,
+  dark: false,
   colors: {
     ...DefaultTheme.colors,
     primary: primary,
@@ -43,5 +45,22 @@ export const theme: Theme = {
     medium: 'montserrat-medium',
     regular: 'montserrat-regular',
     thin: 'montserrat-thin'
+  }
+}
+
+export const themeDark: Theme = {
+  ...theme,
+  dark: true,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: primaryDark,
+    background: black,
+    text: black,
+    accent: darkGray,
+    backdrop: lightGray,
+    disabled: extraLightGray,
+    error: 'red',
+    placeholder: lightGray,
+    surface: extraExtraLightGray
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
 import { Appbar, Avatar } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
+import Header from 'src/components/Header'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -9,13 +10,7 @@ interface Props {
 export default function Screen ({ navigation }: Props) {
   return (
     <View style={s.container}>
-      <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
-        <TouchableOpacity onPress={navigation.openDrawer}>
-          <Avatar.Image size={40} source={require('src/assets/images/robot-dev.png')} />
-        </TouchableOpacity>
-        <Appbar.Content title='Meal plans' />
-        <Appbar.Action icon='settings' />
-      </Appbar.Header>
+      <Header />
     </View>
   )
 }

@@ -29,7 +29,7 @@ export default function Screen ({ navigation }: Props) {
 
   return (
     <View style={styles.container}>
-      <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
+      <Appbar.Header style={{ zIndex: 100 }} theme={{ colors: { primary: '#fff' } }}>
         <Searchbar
           style={{ flex: 1 }}
           icon={focused ? 'keyboard-backspace' : 'menu'}

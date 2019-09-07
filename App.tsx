@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, createContext } from 'react'
 import { Platform, StatusBar, StyleSheet, View } from 'react-native'
 import { Provider, Theme, DefaultTheme } from 'react-native-paper'
 import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
-import { theme } from 'src/constants/Colors'
+import { theme, themeDark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
 
+export const ThemeContext = createContext('light')
 export default function App (props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
@@ -23,9 +24,11 @@ export default function App (props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
-        <Provider theme={theme}>
-          <AppNavigator />
-        </Provider>
+        {/* <ThemeContext.Provider value='dark'> */}
+          <Provider theme={theme}>
+            <AppNavigator />
+          </Provider>
+        {/* </ThemeContext.Provider> */}
       </View>
     )
   }
@@ -39,7 +42,7 @@ async function loadResourcesAsync () {
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
-      ...Ionicons.font,
+      // ...Ionicons.font,
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
       'montserrat-light': require('src/assets/fonts/Montserrat-Light.ttf'),

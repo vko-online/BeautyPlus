@@ -1,7 +1,9 @@
 import React from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, FlatList, StyleSheet } from 'react-native'
 import { Appbar, Avatar } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
+import Header from 'src/components/Header'
+import Recipe from './Recipe'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -9,13 +11,12 @@ interface Props {
 export default function Screen ({ navigation }: Props) {
   return (
     <View style={s.container}>
-      <Appbar.Header theme={{ colors: { primary: '#fff' } }}>
-        <TouchableOpacity onPress={navigation.openDrawer}>
-          <Avatar.Image size={40} source={require('src/assets/images/robot-dev.png')} />
-        </TouchableOpacity>
-        <Appbar.Content title='Recipes' />
-        <Appbar.Action icon='settings' />
-      </Appbar.Header>
+      <Header />
+      <FlatList
+        data={[]}
+        keyExtractor={(item, index) => `${index}`}
+        renderItem={item => <Recipe recipe={item} />}
+      />
     </View>
   )
 }
