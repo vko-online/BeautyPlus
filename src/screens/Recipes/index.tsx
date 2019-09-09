@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, FlatList, StyleSheet } from 'react-native'
-import { Appbar, Avatar } from 'react-native-paper'
+import { Appbar, Text } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import Header from 'src/components/Header'
+import Info, { data } from 'src/components/Info'
 import Recipe from './Recipe'
 
 interface Props {
@@ -13,7 +14,7 @@ export default function Screen ({ navigation }: Props) {
     <View style={s.container}>
       <Header />
       <FlatList
-        data={[]}
+        data={[1]}
         keyExtractor={(item, index) => `${index}`}
         renderItem={item => <Recipe recipe={item} />}
       />

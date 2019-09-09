@@ -10,19 +10,17 @@ export const lightGray = '#AAB8C2'
 export const extraLightGray = '#E1E8ED'
 export const extraExtraLightGray = '#F5F8FA'
 export const white = '#FFFFFF'
+export const lightRed = '#fc6b03'
 
-export default {
-  tintColor,
-  tabIconDefault: '#ccc',
-  tabIconSelected: tintColor,
-  tabBar: '#fefefe',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
-  noticeBackground: tintColor,
-  noticeText: '#fff'
-}
+export const tabIconDefault = '#ccc'
+export const tabIconSelected = tintColor
+export const tabBar = '#fefefe'
+export const errorBackground = 'red'
+export const errorText = '#fff'
+export const warningBackground = '#EAEB5E'
+export const warningText = '#666804'
+export const noticeBackground = tintColor
+export const noticeText = '#fff'
 
 export const theme: Theme = {
   ...DefaultTheme,

@@ -1,13 +1,9 @@
 import React, { RefObject, ReactNode } from 'react'
 import { View, StyleSheet, Dimensions } from 'react-native'
 import { Headline, Appbar, Button, Title, Avatar, IconButton, Menu } from 'react-native-paper'
-import { NavigationScreenProp } from 'react-navigation'
 import BottomSheet from 'react-native-raw-bottom-sheet'
 import { darkGray } from 'src/constants/Colors'
 const { width } = Dimensions.get('window')
-function noop () {
-  // noop
-}
 
 function BottomSheetHeader () {
   return (

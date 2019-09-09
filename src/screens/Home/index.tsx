@@ -13,9 +13,9 @@ import { Hpane, Vpane } from 'view-on-steroids'
 // import SvgUri from 'react-native-svg-uri'
 import { extraExtraLightGray, darkGray, extraLightGray } from 'src/constants/Colors'
 import Header from 'src/components/Header'
+import Sheet from 'src/components/Sheet'
 import Post from './Post'
 import data from './_data.json'
-import Sheet from './Sheet'
 function noop () {
   // noop
 }
