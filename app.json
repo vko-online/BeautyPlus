@@ -2,7 +2,7 @@
   "expo": {
     "name": "dd3",
     "slug": "dd3",
-    "privacy": "public",
+    "privacy": "unlisted",
     "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
