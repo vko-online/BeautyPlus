@@ -1,12 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { View, StyleSheet, Image, ImageBackground } from 'react-native'
-import { Title, Paragraph, Subheading, Headline, IconButton, Caption, Text } from 'react-native-paper'
+import { Title, Paragraph, Subheading, Headline, IconButton, Caption, Text, Button, TouchableRipple } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import { Rating } from 'react-native-ratings'
 import Info, { data } from 'src/components/Info'
 import { Hpane } from 'view-on-steroids'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import BottomSheet from 'react-native-raw-bottom-sheet'
-import { primary, darkGray, extraLightGray, lightRed } from 'src/constants/Colors'
+import { primary, darkGray, extraLightGray, lightRed, extraExtraLightGray } from 'src/constants/Colors'
 import { TestKitchen } from 'src/components/Badges'
 import Sheet from 'src/components/Sheet'
 
@@ -26,6 +27,8 @@ interface Props {
   recipe: Recipe
 }
 export default function Recipe ({ recipe }: Props) {
+  const [favorited, setFav] = useState(false)
+  const [addedToCart, setAddedToCart] = useState(false)
   const testKitchenRef = useRef<BottomSheet>()
   return (
     <View style={s.container}>
@@ -48,10 +51,23 @@ export default function Recipe ({ recipe }: Props) {
           <Caption>Based on 34 reviews</Caption>
         </Hpane>
         <Hpane justifyContent='flex-end' alignItems='center'>
-          <IconButton icon='chat' color={darkGray} size={25} />
+          <TouchableRipple>
+            <Hpane alignItems='center' margin={10}>
+              <Text>Discussion</Text>
+              <Icon name='ios-chatboxes' color={darkGray} size={25} style={{ margin: 10 }} />
+            </Hpane>
+          </TouchableRipple>
           <IconButton icon='print' color={darkGray} size={25} />
-          <IconButton icon='favorite' color={lightRed} size={25} />
-          <IconButton icon='add-shopping-cart' color={darkGray} size={25} />
+          {
+            favorited
+              ? <IconButton icon='favorite' color={lightRed} size={25} onPress={() => setFav(false)} />
+              : <IconButton icon='favorite-border' color={darkGray} size={25} onPress={() => setFav(true)} />
+          }
+          {
+            addedToCart
+              ? <IconButton icon='remove-shopping-cart' color={lightRed} size={25} onPress={() => setAddedToCart(false)} />
+              : <IconButton icon='add-shopping-cart' color={darkGray} size={25} onPress={() => setAddedToCart(true)} />
+          }
         </Hpane>
       </Hpane>
       <Hpane justifyContent='flex-start' alignItems='center'>
