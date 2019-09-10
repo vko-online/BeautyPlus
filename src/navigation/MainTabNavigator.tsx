@@ -9,6 +9,7 @@ import ExploreScreen from 'src/screens/Explore'
 import RecipesScreen from 'src/screens/Recipes'
 import MealplanScreen from 'src/screens/Mealplan'
 import AboutScreen from 'src/screens/About'
+import DiscussionScreen from 'src/screens/Discussion'
 
 import { black, activeIcon } from 'src/constants/Colors'
 
@@ -104,7 +105,8 @@ tabNavigator.path = ''
 
 const rootNavigator: any = createDrawerNavigator({
   Tabs: tabNavigator,
-  About: AboutScreen
+  About: AboutScreen,
+  Discussion: DiscussionScreen
 }, {
   initialRouteName: 'Tabs',
   contentComponent: (props) => <Drawer {...props} />

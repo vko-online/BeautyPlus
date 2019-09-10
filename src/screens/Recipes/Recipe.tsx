@@ -4,7 +4,7 @@ import { Title, Paragraph, Subheading, Headline, IconButton, Caption, Text, Butt
 import { NavigationScreenProp } from 'react-navigation'
 import { Rating } from 'react-native-ratings'
 import Info, { data } from 'src/components/Info'
-import { Hpane } from 'view-on-steroids'
+import { Hpane, Vpane } from 'view-on-steroids'
 import { Ionicons as Icon } from '@expo/vector-icons'
 import BottomSheet from 'react-native-raw-bottom-sheet'
 import { primary, darkGray, extraLightGray, lightRed, extraExtraLightGray } from 'src/constants/Colors'
@@ -30,6 +30,8 @@ export default function Recipe ({ recipe }: Props) {
   const [favorited, setFav] = useState(false)
   const [addedToCart, setAddedToCart] = useState(false)
   const testKitchenRef = useRef<BottomSheet>()
+  const timeRef = useRef<BottomSheet>()
+  const modeRef = useRef<BottomSheet>()
   return (
     <View style={s.container}>
       <ImageBackground
@@ -51,13 +53,8 @@ export default function Recipe ({ recipe }: Props) {
           <Caption>Based on 34 reviews</Caption>
         </Hpane>
         <Hpane justifyContent='flex-end' alignItems='center'>
-          <TouchableRipple>
-            <Hpane alignItems='center' margin={10}>
-              <Text>Discussion</Text>
-              <Icon name='ios-chatboxes' color={darkGray} size={25} style={{ margin: 10 }} />
-            </Hpane>
-          </TouchableRipple>
-          <IconButton icon='print' color={darkGray} size={25} />
+          <IconButton icon='share' color={darkGray} size={25} />
+          {/* <IconButton icon='print' color={darkGray} size={25} /> */}
           {
             favorited
               ? <IconButton icon='favorite' color={lightRed} size={25} onPress={() => setFav(false)} />
@@ -71,20 +68,26 @@ export default function Recipe ({ recipe }: Props) {
         </Hpane>
       </Hpane>
       <Hpane justifyContent='flex-start' alignItems='center'>
-        <Hpane justifyContent='center' alignItems='center' flex={.33}>
-          <IconButton icon='watch-later' color={darkGray} />
-          <Text>10 + 25 min</Text>
-        </Hpane>
+        <TouchableRipple style={{ flex: 0.33 }} onPress={() => timeRef.current.open()}>
+          <Hpane justifyContent='center' alignItems='center' flex={.33}>
+            <IconButton icon='watch-later' color={darkGray} />
+            <Text>10 + 25 min</Text>
+          </Hpane>
+        </TouchableRipple>
         <HDivider />
-        <Hpane justifyContent='center' alignItems='center' flex={.33}>
-          <IconButton icon='power-settings-new' color={darkGray} />
-          <Text>Easy</Text>
-        </Hpane>
+        <TouchableRipple style={{ flex: 0.33 }} onPress={() => modeRef.current.open()}>
+          <Hpane justifyContent='center' alignItems='center'>
+            <IconButton icon='power-settings-new' color={darkGray} />
+            <Text>Easy</Text>
+          </Hpane>
+        </TouchableRipple>
         <HDivider />
-        <Hpane justifyContent='center' alignItems='center' flex={.33}>
-          <IconButton icon='info' color={darkGray} />
-          <Text>Keto</Text>
-        </Hpane>
+        <TouchableRipple style={{ flex: 0.33 }} onPress={() => null}>
+          <Hpane justifyContent='center' alignItems='center'>
+            <IconButton icon='chat' color={darkGray} />
+            <Text>Discussion</Text>
+          </Hpane>
+        </TouchableRipple>
       </Hpane>
       <Subheading style={s.content}>
         A true keto salad classic. Moist chicken and crispy bacon on a bed of crunchy Romain lettuce. In our version, we don't skimp on the dressing or the parmesan cheese!
@@ -106,6 +109,19 @@ export default function Recipe ({ recipe }: Props) {
             From its medieval origins to the digital era, learn everything there is to know about the ubiquitous lorem ipsum passage.
           </Caption>
         </View>
+      </Sheet>
+      <Sheet refItem={timeRef} height={128}>
+        <Vpane padding={10}>
+          <Text>10 minutes preparation time</Text>
+          <Text>25 minutes cooking time</Text>
+        </Vpane>
+      </Sheet>
+      <Sheet refItem={modeRef} height={144}>
+        <Vpane padding={10}>
+          <Text>Easy - usually takes no experience and time</Text>
+          <Text>Moderate - requires some experience</Text>
+          <Text>Hard - requires experience and time</Text>
+        </Vpane>
       </Sheet>
     </View>
   )
