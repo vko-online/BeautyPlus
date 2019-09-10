@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import {
   Image,
   StyleSheet,
@@ -10,12 +10,14 @@ import {
   GestureResponderEvent,
   PanResponderGestureState,
   PanResponder,
-  TouchableOpacity
+  TouchableOpacity,
+  Animated
 } from 'react-native'
-import { Text } from 'react-native-paper'
+import { Text, Title } from 'react-native-paper'
 import { Hpane } from 'view-on-steroids'
 import { lightRed } from 'src/constants/Colors'
 const { width } = Dimensions.get('window')
+const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground)
 
 const initialValues: Day[] = [{
   name: 'Mon',
@@ -130,7 +132,10 @@ const initialValues: Day[] = [{
     image: require('src/assets/meals/sun/3.jpg')
   }]
 }]
-const initialPosition = { x: 0, y: 0 }
+/**
+ * this component lacks flexbox
+ * need refactoring regarding the width props
+ */
 interface Meal {
   title: string
   type: string
@@ -155,7 +160,10 @@ function Day ({ name, fullname, source, onPress }: DayProps) {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
       <ImageBackground source={source} style={s.day}>
-        <Text>{name}</Text>
+        <Text style={{ flex: 1 }}>{name}</Text>
+        {
+          isToday && <Text style={s.today}>TODAY</Text>
+        }
       </ImageBackground>
     </TouchableOpacity>
   )
@@ -194,7 +202,6 @@ function Weeks () {
 
   // definitely need animation here
   const handleClick = useCallback((index) => {
-    console.log('index', index)
     const diff = width / initialValues.length
     setActiveIndex(index)
     // could add animation here :thinking:
@@ -224,10 +231,7 @@ function Weeks () {
               name={item.name}
               fullname={item.fullname}
               source={item.meals[0].image}
-              onPress={() => {
-                console.log('click')
-                handleClick(index)
-              }}
+              onPress={() => handleClick(index)}
             />
           ))
         }
@@ -236,22 +240,34 @@ function Weeks () {
       <FlatList
         data={initialValues[activeIndex].meals}
         keyExtractor={(item, index) => `${index}`}
-        renderItem={({ item, index }) => <Meal name={item.title} source={item.image} type={item.type} />}
+        renderItem={({ item, index }) => <Meal index={index} name={item.title} source={item.image} type={item.type} />}
       />
     </View>
   )
 }
 
 interface MeapProps {
+  index: number
   name: string
   type: string
   source: ImageSourcePropType
 }
-function Meal ({ name, type, source }: MeapProps) {
+function Meal ({ name, index, type, source }: MeapProps) {
+  const [animation, setValue] = useState(new Animated.Value(0))
+  useEffect(() => {
+    Animated.timing(animation, {
+      toValue: 1,
+      duration : 500,
+      delay: index * 100
+    }).start()
+    return () => {
+      animation.setValue(0)
+    }
+  })
   return (
-    <ImageBackground source={source} style={s.meal}>
-      <Text>{name}</Text>
-    </ImageBackground>
+    <AnimatedImageBackground source={source} style={[s.meal, { opacity: animation }]}>
+      <Title style={s.mealTitle}>{name}</Title>
+    </AnimatedImageBackground>
   )
 }
 
@@ -267,9 +283,19 @@ const s = StyleSheet.create({
     width,
     height: height
   },
+  mealTitle: {
+    color: '#fff',
+    alignSelf: 'flex-start',
+    textShadowColor: '#000',
+    textShadowOffset: { height: 0, width: 0 },
+    textShadowRadius: 5,
+    elevation: 2
+  },
   day: {
+    borderRadius: 5,
+    overflow: 'hidden',
     padding: 10,
-    opacity: 0.8,
+    // opacity: 0.8,
     height: height,
     margin: 5,
     width: width / initialValues.length - 10,
@@ -286,6 +312,14 @@ const s = StyleSheet.create({
     borderRadius: 5,
     width: width / initialValues.length,
     height: height + 10
+  },
+  today: {
+    backgroundColor: lightRed,
+    alignSelf: 'center',
+    flexShrink: 1,
+    textAlign: 'center',
+    color: '#fff',
+    width: width / initialValues.length - 10
   }
 })
 
