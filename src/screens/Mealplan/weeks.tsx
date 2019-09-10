@@ -161,7 +161,7 @@ function Day ({ name, fullname, source, onPress, width }: DayProps) {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
       <ImageBackground source={source} style={[s.day, { width } ]}>
-        <Text style={{ flex: 1 }}>{name}</Text>
+        <Text style={{ flex: 1, fontSize: 10, fontWeight: 'bold' }}>{name}</Text>
         {
           isToday && <Text style={[s.today, { width }]}>TODAY</Text>
         }
@@ -186,7 +186,7 @@ function Weeks () {
       x: activeIndex * width / initialValues.length,
       y: 0
     })
-  }, [width, setWidth, setPosition])
+  }, [width])
 
   const handleMove = useCallback((
    evt: GestureResponderEvent,
@@ -302,7 +302,7 @@ function Meal ({ name, index, type, source, width }: MeapProps) {
   )
 }
 
-const height = 200
+const height = 100
 const s = StyleSheet.create({
   container: {
     flex: 1,
@@ -342,6 +342,7 @@ const s = StyleSheet.create({
     height: height + 10
   },
   today: {
+    fontSize: 11,
     backgroundColor: lightRed,
     alignSelf: 'center',
     flexShrink: 1,

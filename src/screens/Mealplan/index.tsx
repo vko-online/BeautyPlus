@@ -16,7 +16,7 @@ interface Props {
 export default function Screen ({ navigation }: Props) {
   return (
     <View style={s.container}>
-      <Header />
+      <Header title='Mealplans' />
       <Vpane padding={20} alignItems='stretch'>
         <Hpane justifyContent='space-between' alignItems='center'>
           <Title>Create new meal plan</Title>
@@ -30,19 +30,17 @@ export default function Screen ({ navigation }: Props) {
           </Button>
         </Hpane>
         <Caption>
-          Create meal plans to your upcoming weeks, or selecte from mastered meal plans from exterts
+          Create meal plans to your upcoming weeks
         </Caption>
       </Vpane>
       <Accordion title='Your meal plan for this week' visible>
-        <View style={{ padding: 20 }}>
+        <Weeks />
+      </Accordion>
+      {/* <Accordion title='Perfectly mastered meal plans from experts'>
+        <View style={{ padding: 20, flex: 1 }}>
           <Weeks />
         </View>
-      </Accordion>
-      <Accordion title='Perfectly mastered meal plans from experts'>
-        <View style={{ padding: 20 }}>
-          <Weeks />
-        </View>
-      </Accordion>
+      </Accordion> */}
     </View>
   )
 }

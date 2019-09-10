@@ -22,7 +22,7 @@ export default function ({ title, children, visible: initialVisibility = false }
   }, [visible, toggleVisibility])
 
   return (
-    <Fragment>
+    <View style={{ flex: 1 }}>
       <TouchableRipple onPress={handlePress}>
         <Hpane alignItems='center' justifyContent='flex-start'>
           {
@@ -32,7 +32,7 @@ export default function ({ title, children, visible: initialVisibility = false }
         </Hpane>
       </TouchableRipple>
       {visible && children}
-    </Fragment>
+    </View>
 
   )
 }
