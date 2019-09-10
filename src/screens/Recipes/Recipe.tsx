@@ -51,12 +51,7 @@ export default function Recipe ({ recipe }: Props) {
           <Caption>Based on 34 reviews</Caption>
         </Hpane>
         <Hpane justifyContent='flex-end' alignItems='center'>
-          <TouchableRipple>
-            <Hpane alignItems='center' margin={10}>
-              <Text>Discussion</Text>
-              <Icon name='ios-chatboxes' color={darkGray} size={25} style={{ margin: 10 }} />
-            </Hpane>
-          </TouchableRipple>
+          {/* <Icon name='ios-chatboxes' color={darkGray} size={25} style={{ margin: 10 }} /> */}
           <IconButton icon='print' color={darkGray} size={25} />
           {
             favorited
@@ -81,10 +76,12 @@ export default function Recipe ({ recipe }: Props) {
           <Text>Easy</Text>
         </Hpane>
         <HDivider />
-        <Hpane justifyContent='center' alignItems='center' flex={.33}>
-          <IconButton icon='info' color={darkGray} />
-          <Text>Keto</Text>
-        </Hpane>
+        <TouchableRipple>
+          <Hpane justifyContent='center' alignItems='center' flex={.33}>
+            <IconButton icon='chat' color={darkGray} />
+            <Text>Discussion</Text>
+          </Hpane>
+        </TouchableRipple>
       </Hpane>
       <Subheading style={s.content}>
         A true keto salad classic. Moist chicken and crispy bacon on a bed of crunchy Romain lettuce. In our version, we don't skimp on the dressing or the parmesan cheese!

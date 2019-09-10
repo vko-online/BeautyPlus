@@ -3,6 +3,7 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native'
 import { Appbar, Avatar } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import Header from 'src/components/Header'
+import Weeks from './weeks'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -11,6 +12,7 @@ export default function Screen ({ navigation }: Props) {
   return (
     <View style={s.container}>
       <Header />
+      <Weeks />
     </View>
   )
 }
