@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, Platform } from 'react-native'
 import {
   DrawerItemsProps, NavigationScreenProp, DrawerNavigationState, withNavigation
 } from 'react-navigation'
@@ -83,7 +83,15 @@ function DrawerComponent ({ navigation }: Props) {
 const s = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    ...Platform.select({
+      ios: {
+        paddingTop: 40
+      },
+      android: {
+        paddingTop: 20
+      }
+    })
   },
   premium: {
     borderTopRightRadius: 6,

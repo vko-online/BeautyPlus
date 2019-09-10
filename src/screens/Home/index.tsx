@@ -53,6 +53,7 @@ export default function Screen ({ navigation }: Props) {
       <SectionList
         style={s.list}
         sections={data}
+        keyExtractor={(item, index) => `${index}`}
         renderSectionHeader={SectionHeader}
         // ItemSeparatorComponent={ItemSeparator}
         renderItem={({ section, index }) => {
@@ -172,6 +173,7 @@ const s = StyleSheet.create({
     color: 'rgb(101, 119, 134)'
   },
   header: {
+    backgroundColor: '#fff',
     position: 'relative',
     marginHorizontal: 3,
     height: 60

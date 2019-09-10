@@ -1,5 +1,5 @@
 import React, { useState, useContext, createContext } from 'react'
-import { Platform, StatusBar, StyleSheet, View } from 'react-native'
+import { Platform, YellowBox, StatusBar, StyleSheet, View } from 'react-native'
 import { Provider, Theme, DefaultTheme } from 'react-native-paper'
 import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { theme, themeDark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
 
+YellowBox.ignoreWarnings(['Require cycle'])
 export const ThemeContext = createContext('light')
 export default function App (props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false)

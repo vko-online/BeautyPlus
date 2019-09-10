@@ -40,8 +40,8 @@ function Post ({
       <Card.Content>
         <Card.Cover source={{ uri: image }} />
         { Boolean(description) && (
-          <Paragraph numberOfLines={2}>
-            { Boolean(type) && <Badge style={{ marginRight: 5 }} size={30}>{type}</Badge> }
+          <Paragraph numberOfLines={2} style={{ justifyContent: 'flex-start' }}>
+            {/* { Boolean(type) && <Badge style={{ marginRight: 5 }} size={30}>{type}</Badge> } */}
             {description}
           </Paragraph>
         ) }
