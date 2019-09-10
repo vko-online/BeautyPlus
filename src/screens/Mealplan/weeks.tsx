@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, Fragment } from 'react'
 import {
   Image,
   StyleSheet,
@@ -6,17 +6,17 @@ import {
   ImageBackground,
   View,
   ImageSourcePropType,
-  Dimensions,
   GestureResponderEvent,
   PanResponderGestureState,
   PanResponder,
   TouchableOpacity,
-  Animated
+  Animated,
+  LayoutChangeEvent
 } from 'react-native'
 import { Text, Title } from 'react-native-paper'
 import { Hpane } from 'view-on-steroids'
 import { lightRed } from 'src/constants/Colors'
-const { width } = Dimensions.get('window')
+// const { width } = Dimensions.get('window')
 const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground)
 
 const initialValues: Day[] = [{
@@ -151,29 +151,42 @@ interface DayProps {
   fullname: string
   source: ImageSourcePropType
   onPress?: () => void
+  width: number
 }
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-function Day ({ name, fullname, source, onPress }: DayProps) {
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+function Day ({ name, fullname, source, onPress, width }: DayProps) {
   const d = new Date()
-  const dayName = days[d.getDay()]
+  const dayName = days[d.getDay() - 1]
   const isToday = fullname.toLowerCase() === dayName.toLowerCase()
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
-      <ImageBackground source={source} style={s.day}>
+      <ImageBackground source={source} style={[s.day, { width } ]}>
         <Text style={{ flex: 1 }}>{name}</Text>
         {
-          isToday && <Text style={s.today}>TODAY</Text>
+          isToday && <Text style={[s.today, { width }]}>TODAY</Text>
         }
       </ImageBackground>
     </TouchableOpacity>
   )
 }
 function Weeks () {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const d = new Date()
+  const initialWeekIndex = d.getDay() - 1
+  const [width, setWidth] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(initialWeekIndex)
   const [position, setPosition] = useState({
-    x: activeIndex * width / initialValues.length,
+    x: initialWeekIndex * width / initialValues.length,
     y: 0
   })
+
+  const handleLayout = useCallback((event: LayoutChangeEvent) => {
+    const width = event.nativeEvent.layout.width
+    setWidth(width)
+    setPosition({
+      x: activeIndex * width / initialValues.length,
+      y: 0
+    })
+  }, [width, setWidth, setPosition])
 
   const handleMove = useCallback((
    evt: GestureResponderEvent,
@@ -191,11 +204,12 @@ function Weeks () {
   ) => {
     const positionX = e.nativeEvent.pageX - e.nativeEvent.locationX
     const diff = width / initialValues.length
-    const v = Math.round(positionX / diff)
-    setActiveIndex(v)
+    const posIndex = Math.round(positionX / diff)
+    const normalizedPos = Math.min(posIndex, initialValues.length - 1)
+    setActiveIndex(normalizedPos)
     // could add animation here :thinking:
     setPosition({
-      x: v * diff,
+      x: normalizedPos * diff,
       y: position.y
     })
   }, [position, setPosition, setActiveIndex])
@@ -221,27 +235,43 @@ function Weeks () {
     onPanResponderRelease: handleRelease,
     onShouldBlockNativeResponder: (evt, gestureState) => true
   })
+
   return (
-    <View style={s.container}>
-      <Hpane>
-        {
-          initialValues.map((item, index) => (
-            <Day
-              key={index}
-              name={item.name}
-              fullname={item.fullname}
-              source={item.meals[0].image}
-              onPress={() => handleClick(index)}
+    <View style={s.container} onLayout={handleLayout}>
+      {
+        (width > 0) && (
+          <Fragment>
+            <Hpane>
+              {
+                initialValues.map((item, index) => (
+                  <Day
+                    key={index}
+                    width={width / initialValues.length - 10}
+                    name={item.name}
+                    fullname={item.fullname}
+                    source={item.meals[0].image}
+                    onPress={() => handleClick(index)}
+                  />
+                ))
+              }
+            </Hpane>
+            <View style={[s.indicator, { width: width / initialValues.length, top: position.y, left: position.x }]} {...pan.panHandlers} />
+            <FlatList
+              data={initialValues[activeIndex].meals}
+              keyExtractor={(item, index) => `${index}`}
+              renderItem={({ item, index }) => (
+                <Meal
+                  width={width}
+                  index={index}
+                  name={item.title}
+                  source={item.image}
+                  type={item.type}
+                />
+              )}
             />
-          ))
-        }
-      </Hpane>
-      <View style={[s.indicator, { top: position.y, left: position.x }]} {...pan.panHandlers} />
-      <FlatList
-        data={initialValues[activeIndex].meals}
-        keyExtractor={(item, index) => `${index}`}
-        renderItem={({ item, index }) => <Meal index={index} name={item.title} source={item.image} type={item.type} />}
-      />
+          </Fragment>
+        )
+      }
     </View>
   )
 }
@@ -251,8 +281,9 @@ interface MeapProps {
   name: string
   type: string
   source: ImageSourcePropType
+  width: number
 }
-function Meal ({ name, index, type, source }: MeapProps) {
+function Meal ({ name, index, type, source, width }: MeapProps) {
   const [animation, setValue] = useState(new Animated.Value(0))
   useEffect(() => {
     Animated.timing(animation, {
@@ -265,7 +296,7 @@ function Meal ({ name, index, type, source }: MeapProps) {
     }
   })
   return (
-    <AnimatedImageBackground source={source} style={[s.meal, { opacity: animation }]}>
+    <AnimatedImageBackground source={source} style={[s.meal, { width, opacity: animation }]}>
       <Title style={s.mealTitle}>{name}</Title>
     </AnimatedImageBackground>
   )
@@ -280,7 +311,6 @@ const s = StyleSheet.create({
   meal: {
     padding: 10,
     margin: 5,
-    width,
     height: height
   },
   mealTitle: {
@@ -298,7 +328,6 @@ const s = StyleSheet.create({
     // opacity: 0.8,
     height: height,
     margin: 5,
-    width: width / initialValues.length - 10,
     flexGrow: 1
   },
   indicator: {
@@ -310,7 +339,6 @@ const s = StyleSheet.create({
     borderWidth: 7,
     borderColor: lightRed,
     borderRadius: 5,
-    width: width / initialValues.length,
     height: height + 10
   },
   today: {
@@ -318,8 +346,7 @@ const s = StyleSheet.create({
     alignSelf: 'center',
     flexShrink: 1,
     textAlign: 'center',
-    color: '#fff',
-    width: width / initialValues.length - 10
+    color: '#fff'
   }
 })
 
