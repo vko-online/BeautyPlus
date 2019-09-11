@@ -50,7 +50,7 @@ export default function Recipe ({ recipe }: Props) {
             ratingBackgroundColor='transparent'
             style={{ marginHorizontal: 20, marginVertical: 10 , alignSelf: 'flex-start' } as any}
           />
-          <Caption>Based on 34 reviews</Caption>
+          <Caption>34 reviews</Caption>
         </Hpane>
         <Hpane justifyContent='flex-end' alignItems='center'>
           <IconButton icon='share' color={darkGray} size={25} />
