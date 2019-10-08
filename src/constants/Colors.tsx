@@ -22,6 +22,21 @@ export const warningText = '#666804'
 export const noticeBackground = tintColor
 export const noticeText = '#fff'
 
+export const blue = '#0000FF'
+export const bluedark = '#00008B'
+export const brown = '#A52A2A'
+export const browndark = '#800000'
+export const gray = '#808080'
+export const graydark = '#696969'
+export const green = '#008000'
+export const greendark = '#006400'
+export const orange = '#FFA500'
+export const orangedark = '#FF8C00'
+export const pink = '#FFC0CB'
+export const pinkdark = '#FF69B4'
+export const red = '#FF0000'
+export const reddark = '#8B0000'
+
 export const theme: Theme = {
   ...DefaultTheme,
   roundness: 1,

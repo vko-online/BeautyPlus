@@ -11,9 +11,9 @@ export default function Screen ({ navigation }: Props) {
     <ScrollView style={styles.container}>
       <Appbar.Header style={{ zIndex: 100 }} theme={{ colors: { primary: '#fff' } }}>
         <Appbar.BackAction onPress={() => navigation.goBack()} />
-        <Appbar.Content title='About' />
+        <Appbar.Content title='Auth' />
       </Appbar.Header>
-      <Headline>About</Headline>
+      <Headline>Auth</Headline>
     </ScrollView>
   )
 }
