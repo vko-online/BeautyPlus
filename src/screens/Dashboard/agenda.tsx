@@ -12,6 +12,7 @@ import Client from './client'
 import Pane, { Hpane } from 'view-on-steroids'
 import { groupBy } from 'lodash'
 import TopBar from 'src/components/TopBar'
+import UnderConstruction from 'src/components/construction'
 import { white } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
 import { generateSlots } from './calendar'
@@ -23,9 +24,8 @@ export default function ({}: Props) {
   const [delimeter, setDelimeter] = useState(20)
   return (
     <Page>
-      <TopBar>
+      <TopBar style={{ backgroundColor: 'red' }}>
         <Dropdown
-          label='20'
           value={delimeter}
           data={delimeters}
           onChangeText={(val) => setDelimeter(Number(val))}
@@ -34,25 +34,26 @@ export default function ({}: Props) {
           containerStyle={s.dropdown}
         />
       </TopBar>
-      <Hpane>
+      <UnderConstruction />
+      {/* <Hpane>
         <SectionList
           sections={data}
           ListHeaderComponent={(
             <Hpane>
               {
                 employess.slice(0, 3).map((employee, index) => (
-                  <Client name={employee} date={new Date()} />
+                  <Client key={index} name={employee} date={new Date()} />
                 ))
               }
             </Hpane>
           )}
           renderItem={({ item, index }) => (
-            <Pane borderWidth={1} borderColor='#000' height={30}>
+            <Pane borderWidth={1} borderColor='#000' height={30} key={index}>
               {null}
             </Pane>
           )}
         />
-      </Hpane>
+      </Hpane> */}
     </Page>
   )
 }
@@ -81,14 +82,19 @@ const data = [{
 
 const s = StyleSheet.create({
   dropdown: {
-    borderWidth: StyleSheet.hairlineWidth,
+    // borderWidth: StyleSheet.hairlineWidth,
     backgroundColor: white,
-    borderColor: 'rgb(170, 184, 194)',
-    borderRadius: 3,
-    height: 58,
-    width: 30
+    // borderColor: 'rgb(170, 184, 194)',
+    // borderRadius: 3,
+    width: 50,
+    // height: 60,
+    margin: 0,
+    padding: 0
+    // alignItems: 'flex-start',
+    // justifyContent: 'flex-start'
   },
   dropdownInput: {
-    borderWidth: 0
+    margin: 0,
+    padding: 0
   }
 })

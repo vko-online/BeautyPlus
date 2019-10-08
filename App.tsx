@@ -24,12 +24,9 @@ export default function App (props) {
     )
   } else {
     return (
-      <Page>
-        {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
-          <Provider theme={theme}>
-            <AppNavigator />
-          </Provider>
-      </Page>
+      <Provider theme={theme}>
+        <AppNavigator />
+      </Provider>
     )
   }
 }

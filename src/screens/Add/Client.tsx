@@ -18,7 +18,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       contentContainerStyle={{ flex: 1 }}
     >
       <Background onDismiss={onDismiss}>
-        <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
+        <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='space-evenly' backgroundColor='red'>
           <Title style={s.title}>שדח חוקל תפסוה</Title>
           <View>
             <TextInput
