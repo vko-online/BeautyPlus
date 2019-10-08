@@ -7,6 +7,7 @@ import AddClient from 'src/screens/Add/Client'
 import AddService from 'src/screens/Add/Service'
 import AddOrder from 'src/screens/Add/Order'
 import { iconTheme } from 'src/constants/Colors'
+import Agenda from './agenda'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -58,6 +59,9 @@ export default function Screen ({}: Props) {
       <AddClient visible={clientVisible} onDismiss={() => setClientVisible(false)} />
       <AddService visible={serviceVisible} onDismiss={() => setServiceVisible(false)} />
       <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
+      <Page>
+        <Agenda />
+      </Page>
     </Page>
   )
 }

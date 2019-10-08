@@ -64,16 +64,17 @@ const data = [{
 }, {
   value: '15'
 }, {
-  value: '30'
+  value: '20'
 }, {
-  value: '45'
+  value: '30'
 }, {
   value: '60'
 }, {
-  value: '90'
+  value: '120'
+}, {
+  value: '180'
 }]
 const initialValue = data[0]
-
 const s = StyleSheet.create({
   title: {
     fontSize: 24,
