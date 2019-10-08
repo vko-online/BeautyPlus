@@ -1,10 +1,8 @@
-import { Platform, Image, StyleSheet } from 'react-native'
-import { createStackNavigator, createBottomTabNavigator, StackNavigatorConfig, createDrawerNavigator } from 'react-navigation'
+import { Platform } from 'react-native'
+import { createStackNavigator, StackNavigatorConfig } from 'react-navigation'
 
 import Dashboard from 'src/screens/Dashboard'
-import Auth from 'src/screens/Auth'
-
-import { black, activeIcon } from 'src/constants/Colors'
+import Login from 'src/screens/Auth/Login'
 
 const config: StackNavigatorConfig = Platform.select({
   web: { headerMode: 'screen' },
@@ -22,7 +20,7 @@ DashboardStack.path = ''
 
 const AuthStack: any = createStackNavigator(
   {
-    Auth
+    Login
   },
   config
 )
@@ -30,12 +28,22 @@ const AuthStack: any = createStackNavigator(
 AuthStack.path = ''
 
 const rootNavigator: any = createStackNavigator({
-  DashboardStack,
-  AuthStack
+  DashboardStack
 }, {
-  initialRouteName: 'DashboardStack'
+  initialRouteName: 'DashboardStack',
+  headerMode: 'none'
 })
 
 rootNavigator.path = ''
+
+const authNavigator: any = createStackNavigator({
+  AuthStack
+}, {
+  initialRouteName: 'AuthStack'
+})
+
+authNavigator.path = ''
+
+export { authNavigator }
 
 export default rootNavigator
