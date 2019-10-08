@@ -1,10 +1,10 @@
 import React, { useState, createContext } from 'react'
 import { Platform, YellowBox, StatusBar, I18nManager } from 'react-native'
-import { Provider } from 'react-native-paper'
+import { Provider, Portal } from 'react-native-paper'
 import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
-import { theme } from 'src/constants/Colors'
+import { theme, graydark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
 import Page from 'src/components/Page'
 
@@ -25,6 +25,7 @@ export default function App (props) {
   } else {
     return (
       <Provider theme={theme}>
+        <StatusBar barStyle='light-content' backgroundColor={graydark} />
         <AppNavigator />
       </Provider>
     )

@@ -1,9 +1,10 @@
 import React from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native'
-import { Button, Modal, Title, TextInput } from 'react-native-paper'
+import { Button, Modal, Title } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Background from './background'
 import { orangedark } from 'src/constants/Colors'
+import { TextInput } from 'src/components/Inputs'
 
 interface Props {
   visible: boolean
@@ -18,7 +19,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       contentContainerStyle={{ flex: 1 }}
     >
       <Background onDismiss={onDismiss}>
-        <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='space-evenly' backgroundColor='red'>
+        <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='space-evenly'>
           <Title style={s.title}>שדח חוקל תפסוה</Title>
           <View>
             <TextInput

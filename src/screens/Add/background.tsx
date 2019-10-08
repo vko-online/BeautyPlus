@@ -14,9 +14,7 @@ export default function ({ children, onDismiss, style }: Props) {
       resizeMode='stretch'
     >
       <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: Platform.OS === 'ios' && 30 }} />
-      <View style={{ flex: 1, flexGrow: 1, minHeight: '100%', minWidth: '100%' }}>
-        {children}
-      </View>
+      {children}
     </ImageBackground>
   )
 }
