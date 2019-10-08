@@ -1,12 +1,14 @@
-import React, { useState, useContext, createContext } from 'react'
-import { Platform, YellowBox, StatusBar, StyleSheet, View } from 'react-native'
-import { Provider, Theme, DefaultTheme } from 'react-native-paper'
+import React, { useState, createContext } from 'react'
+import { Platform, YellowBox, StatusBar, I18nManager } from 'react-native'
+import { Provider } from 'react-native-paper'
 import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { theme } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
+import Page from 'src/components/Page'
 
+I18nManager.forceRTL(true)
 YellowBox.ignoreWarnings(['Require cycle'])
 export const ThemeContext = createContext('light')
 export default function App (props) {
@@ -22,12 +24,12 @@ export default function App (props) {
     )
   } else {
     return (
-      <View style={styles.container}>
+      <Page>
         {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
           <Provider theme={theme}>
             <AppNavigator />
           </Provider>
-      </View>
+      </Page>
     )
   }
 }
@@ -42,7 +44,9 @@ async function loadResourcesAsync () {
       'montserrat-light': require('src/assets/fonts/Montserrat-Light.ttf'),
       'montserrat-thin': require('src/assets/fonts/Montserrat-Thin.ttf'),
       'montserrat-medium': require('src/assets/fonts/Montserrat-Medium.ttf'),
-      'montserrat-regular': require('src/assets/fonts/Montserrat-Regular.ttf')
+      'montserrat-regular': require('src/assets/fonts/Montserrat-Regular.ttf'),
+      'levenim-regular': require('src/assets/fonts/lvnm.ttf'),
+      'levenim-bold': require('src/assets/fonts/lvnmbd.ttf')
     })
   ])
 }
@@ -56,10 +60,3 @@ function handleLoadingError (error) {
 function handleFinishLoading (setLoadingComplete) {
   setLoadingComplete(true)
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff'
-  }
-})

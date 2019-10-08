@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, ViewStyle } from 'react-native'
 
-interface Props {
+interface Props extends ViewStyle {
   children?: ReactNode
 }
-export default function ({ children }: Props) {
+export default function ({ children, ...style }: Props) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {children}
     </View>
   )
@@ -15,6 +15,7 @@ export default function ({ children }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexGrow: 1,
     backgroundColor: '#fff'
   }
 })
