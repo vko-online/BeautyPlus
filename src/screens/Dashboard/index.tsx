@@ -57,7 +57,7 @@ export default function Screen ({}: Props) {
       <Headline>Dashboard</Headline>
       <AddClient visible={clientVisible} onDismiss={() => setClientVisible(false)} />
       <AddService visible={serviceVisible} onDismiss={() => setServiceVisible(false)} />
-      {/* <AddOrder visible={clientVisible} onDismiss={() => setClientVisible(false)} /> */}
+      <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
     </Page>
   )
 }

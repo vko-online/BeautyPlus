@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, ImageBackground, Picker } from 'react-native'
+import { StyleSheet, View, Picker } from 'react-native'
 import { Button, Modal, Title, TextInput } from 'react-native-paper'
-import { Dropdown } from 'react-native-material-dropdown'
 import Page from 'src/components/Page'
 import Header from './header'
 import { orangedark } from 'src/constants/Colors'
-import { Hpane } from 'view-on-steroids'
+import Background from './background'
 
 interface Props {
   visible: boolean
@@ -20,12 +19,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       dismissable
       contentContainerStyle={{ flex: 1 }}
     >
-      <ImageBackground
-        source={require('./Background.png')}
-        style={s.background}
-        resizeMode='stretch'
-      >
-        <Header onPress={onDismiss} style={{ backgroundColor: 'transparent' }} />
+      <Background onDismiss={onDismiss}>
         <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
           <Title style={s.title}>שדח לופיט תפסוה</Title>
           <View>
@@ -41,7 +35,7 @@ export default function ({ visible = false, onDismiss }: Props) {
                 selectedValue={duration}
                 style={s.dropdown}
                 itemStyle={s.item}
-                onValueChange={(itemValue, itemIndex) =>
+                onValueChange={(itemValue) =>
                   setDuration(itemValue)
                 }>
                 {
@@ -61,7 +55,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             רומש
           </Button>
         </Page>
-      </ImageBackground>
+      </Background>
     </Modal>
   )
 }
@@ -102,9 +96,6 @@ const s = StyleSheet.create({
   },
   item: {
     fontFamily: 'levenim-regular',
-    fontSize: 16,
-  },
-  background: {
-    flex: 1
+    fontSize: 16
   }
 })

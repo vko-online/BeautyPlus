@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native'
 import { Button, Modal, Title, TextInput } from 'react-native-paper'
 import Page from 'src/components/Page'
-import Header from './header'
+import Background from './background'
 import { orangedark } from 'src/constants/Colors'
 
 interface Props {
@@ -17,12 +17,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       dismissable
       contentContainerStyle={{ flex: 1 }}
     >
-      <Header onPress={onDismiss} />
-      <ImageBackground
-        source={require('./Background.png')}
-        style={s.background}
-        resizeMode='stretch'
-      >
+      <Background onDismiss={onDismiss}>
         <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
           <Title style={s.title}>שדח חוקל תפסוה</Title>
           <View>
@@ -43,7 +38,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             רומש
           </Button>
         </Page>
-      </ImageBackground>
+      </Background>
     </Modal>
   )
 }
@@ -55,8 +50,5 @@ const s = StyleSheet.create({
     color: orangedark,
     textAlign: 'center',
     fontWeight: 'bold'
-  },
-  background: {
-    flex: 1
   }
 })
