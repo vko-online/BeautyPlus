@@ -33,7 +33,7 @@ export default function ({ visible = false, onDismiss }: Props) {
           <Dropdown
             label='םידבוע'
             data={data}
-            labelSize={16}
+            labelFontSize={16}
             style={s.dropdownInput}
             containerStyle={s.dropdown}
           />
@@ -44,7 +44,7 @@ export default function ({ visible = false, onDismiss }: Props) {
           />
           <Dropdown
             data={data}
-            labelSize={16}
+            labelFontSize={16}
             containerStyle={s.dropdown}
             style={s.dropdownInput}
             label='לופיטה םש'

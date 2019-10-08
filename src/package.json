@@ -1,6 +1,3 @@
 {
-  "name": "src",
-  "devDependencies": {
-    "@types/react-native-material-dropdown": "^0.11.3"
-  }
+  "name": "src"
 }
