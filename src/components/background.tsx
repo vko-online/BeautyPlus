@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { StyleSheet, Platform, ImageBackground, StyleProp, ViewStyle, View } from 'react-native'
-import Header from './header'
+import Header from '../screens/Add/header'
 interface Props {
   onDismiss: () => void
   children: ReactNode
@@ -13,7 +13,7 @@ export default function ({ children, onDismiss, style }: Props) {
       style={[s.background, style]}
       resizeMode='stretch'
     >
-      <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: Platform.OS === 'ios' && 30 }} />
+      <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: 30 }} />
       {children}
     </ImageBackground>
   )

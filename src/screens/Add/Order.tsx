@@ -21,7 +21,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       dismissable
       contentContainerStyle={{ flex: 1 }}
     >
-      <Header onPress={onDismiss} style={{ paddingTop: Platform.OS === 'ios' && 30 }} />
+      <Header onPress={onDismiss} style={{ paddingTop: 30 }} />
       <Page padding={20} justifyContent='space-evenly' backgroundColor='#fff'>
         <View>
           <Title style={s.title}>02.09.19</Title>

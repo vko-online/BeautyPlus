@@ -11,7 +11,7 @@ interface Props {
 }
 function Header ({ children, text = 'September 1-7' }: Props) {
   return (
-    <TopBar style={{ paddingTop: Platform.OS === 'ios' && 30 }}>
+    <TopBar style={{ paddingTop: 30 }}>
       <IconButton icon='chevron-right' theme={iconTheme} />
       <Text style={{ color: white }}>{text}</Text>
       <IconButton icon='chevron-left' theme={iconTheme} />

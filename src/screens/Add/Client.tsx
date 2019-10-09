@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native'
 import { Button, Modal, Title } from 'react-native-paper'
 import Page from 'src/components/Page'
-import Background from './background'
+import Background from 'src/components/background'
 import { orangedark } from 'src/constants/Colors'
 import { TextInput } from 'src/components/Inputs'
 
