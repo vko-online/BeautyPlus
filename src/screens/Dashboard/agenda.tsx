@@ -12,8 +12,10 @@ import Client from './client'
 import Pane, { Hpane } from 'view-on-steroids'
 import { groupBy } from 'lodash'
 import TopBar from 'src/components/TopBar'
-import { white } from 'src/constants/Colors'
+import UnderConstruction from 'src/components/construction'
+import { white, graydark, gray, black } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
+import { Ionicons } from '@expo/vector-icons'
 import { generateSlots } from './calendar'
 
 interface Props {
@@ -23,36 +25,44 @@ export default function ({}: Props) {
   const [delimeter, setDelimeter] = useState(20)
   return (
     <Page>
-      <TopBar>
+      <TopBar style={{ borderTopColor: white, borderTopWidth: StyleSheet.hairlineWidth }}>
         <Dropdown
-          label='20'
           value={delimeter}
           data={delimeters}
+          rippleCentered
+          rippleInsets={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          renderBase={() => (
+            <View style={s.base}>
+              <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
+              <Text style={s.baseText}>20</Text>
+            </View>
+          )}
           onChangeText={(val) => setDelimeter(Number(val))}
-          labelFontSize={16}
+          labelFontSize={13}
           style={s.dropdownInput}
           containerStyle={s.dropdown}
         />
       </TopBar>
-      <Hpane>
+      <UnderConstruction />
+      {/* <Hpane>
         <SectionList
           sections={data}
           ListHeaderComponent={(
             <Hpane>
               {
                 employess.slice(0, 3).map((employee, index) => (
-                  <Client name={employee} date={new Date()} />
+                  <Client key={index} name={employee} date={new Date()} />
                 ))
               }
             </Hpane>
           )}
           renderItem={({ item, index }) => (
-            <Pane borderWidth={1} borderColor='#000' height={30}>
+            <Pane borderWidth={1} borderColor='#000' height={30} key={index}>
               {null}
             </Pane>
           )}
         />
-      </Hpane>
+      </Hpane> */}
     </Page>
   )
 }
@@ -81,14 +91,33 @@ const data = [{
 
 const s = StyleSheet.create({
   dropdown: {
-    borderWidth: StyleSheet.hairlineWidth,
-    backgroundColor: white,
-    borderColor: 'rgb(170, 184, 194)',
-    borderRadius: 3,
-    height: 58,
-    width: 30
+    // borderWidth: StyleSheet.hairlineWidth,
+    // borderColor: 'rgb(170, 184, 194)',
+    // borderRadius: 3,
+    width: 56,
+    // height: 60,
+    marginLeft: 20
+    // padding: 0
+    // alignItems: 'flex-start',
+    // justifyContent: 'flex-start'
+  },
+  base: {
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: '#f0f0f0',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    marginVertical: 10
+  },
+  baseText: {
+    marginRight: 6,
+    color: black,
+    fontFamily: 'levenim-bold'
   },
   dropdownInput: {
-    borderWidth: 0
+    color: '#fff',
+    margin: 0,
+    padding: 0
   }
 })

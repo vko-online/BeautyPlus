@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Picker } from 'react-native'
-import { Button, Modal, Title, TextInput } from 'react-native-paper'
+import { StyleSheet, View } from 'react-native'
+import { Button, Modal, Title, Text } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Header from './header'
-import { orangedark } from 'src/constants/Colors'
+import { orangedark, gray, black, white } from 'src/constants/Colors'
 import Background from './background'
+import { Dropdown } from 'react-native-material-dropdown'
+import { Ionicons } from '@expo/vector-icons'
+import { TextInput } from 'src/components/Inputs'
 
 interface Props {
   visible: boolean
@@ -25,25 +28,24 @@ export default function ({ visible = false, onDismiss }: Props) {
           <View>
             <TextInput
               placeholder='לופיטה םש'
+              numberOfLines={1}
             />
-            <View style={s.inputs}>
+            <View style={s.multiline}>
               <TextInput
                 placeholder='לופיט ןמז'
-                style={{ flex: 1, paddingRight: 50 }}
+                numberOfLines={1}
               />
-              <Picker
-                selectedValue={duration}
+              <Dropdown
+                data={data}
+                labelFontSize={16}
                 style={s.dropdown}
-                itemStyle={s.item}
-                onValueChange={(itemValue) =>
-                  setDuration(itemValue)
-                }>
-                {
-                  data.map((item, key) => (
-                    <Picker.Item label={item.value} value={item.value} key={key} />
-                  ))
-                }
-              </Picker>
+                renderBase={() => (
+                  <View style={s.base}>
+                    <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
+                    <Text style={s.baseText}>20</Text>
+                  </View>
+                )}
+              />
             </View>
           </View>
           <Button
@@ -83,17 +85,33 @@ const s = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold'
   },
-  inputs: {
-    position: 'relative',
+  multiline: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginTop: 20
   },
   dropdown: {
     backgroundColor: '#f0f0f0',
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    bottom: 0,
     width: 50
+  },
+  base: {
+    height: 57.6,
+    maxHeight: 58,
+    width: 60,
+    marginRight: -17,
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: white,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15
+  },
+  baseText: {
+    marginRight: 10,
+    fontSize: 16,
+    color: black,
+    fontFamily: 'levenim-regular'
   },
   item: {
     fontFamily: 'levenim-regular',

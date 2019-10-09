@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Headline, Menu, IconButton, Divider } from 'react-native-paper'
+import { Portal, Menu, IconButton, Divider } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import Header from './header'
 import Page from 'src/components/Page'
@@ -55,9 +55,11 @@ export default function Screen ({}: Props) {
           />
         </Menu>
       </Header>
-      <AddClient visible={clientVisible} onDismiss={() => setClientVisible(false)} />
-      <AddService visible={serviceVisible} onDismiss={() => setServiceVisible(false)} />
-      <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
+      <Portal>
+        <AddClient visible={clientVisible} onDismiss={() => setClientVisible(false)} />
+        <AddService visible={serviceVisible} onDismiss={() => setServiceVisible(false)} />
+        <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
+      </Portal>
       <Page>
         <Agenda />
       </Page>

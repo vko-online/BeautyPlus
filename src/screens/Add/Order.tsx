@@ -1,11 +1,13 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Button, Modal, Title, TextInput } from 'react-native-paper'
+import { StyleSheet, View, Platform } from 'react-native'
+import { Button, Modal, Text, Title } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Header from './header'
-import { orangedark, reddark, black, white } from 'src/constants/Colors'
+import { orangedark, reddark, black, white, gray } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
 import { Hpane } from 'view-on-steroids'
+import { TextInput } from 'src/components/Inputs'
+import { Ionicons } from '@expo/vector-icons'
 
 interface Props {
   visible: boolean
@@ -19,7 +21,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       dismissable
       contentContainerStyle={{ flex: 1 }}
     >
-      <Header onPress={onDismiss} />
+      <Header onPress={onDismiss} style={{ paddingTop: Platform.OS === 'ios' && 30 }} />
       <Page padding={20} justifyContent='space-evenly' backgroundColor='#fff'>
         <View>
           <Title style={s.title}>02.09.19</Title>
@@ -28,31 +30,25 @@ export default function ({ visible = false, onDismiss }: Props) {
         <View>
           <TextInput
             placeholder='חוקלה םש'
-            mode='outlined'
-          />
-          <Dropdown
-            label='םידבוע'
-            data={data}
-            labelFontSize={16}
-            style={s.dropdownInput}
-            containerStyle={s.dropdown}
           />
           <TextInput
             placeholder='ןופלט'
             style={{ marginTop: 20 }}
-            mode='outlined'
           />
           <Dropdown
             data={data}
             labelFontSize={16}
-            containerStyle={s.dropdown}
-            style={s.dropdownInput}
-            label='לופיטה םש'
+            style={s.dropdown}
+            renderBase={() => (
+              <View style={s.base}>
+                <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
+                <Text style={s.baseText}>20</Text>
+              </View>
+            )}
           />
           <TextInput
             placeholder='תורעה'
             style={{ marginTop: 20 }}
-            mode='outlined'
           />
         </View>
         <Hpane alignItems='center'>
@@ -95,14 +91,28 @@ const s = StyleSheet.create({
     fontWeight: 'bold'
   },
   dropdown: {
-    marginTop: 20,
-    borderWidth: StyleSheet.hairlineWidth,
-    backgroundColor: white,
-    borderColor: 'rgb(170, 184, 194)',
-    borderRadius: 3,
+    minHeight: 58,
     height: 58
   },
-  dropdownInput: {
-    borderWidth: 0
+  baseText: {
+    flex: 1,
+    marginRight: 10,
+    fontSize: 16,
+    color: black,
+    fontFamily: 'levenim-regular'
+  },
+  base: {
+    marginTop: 20,
+    height: 57.6,
+    maxHeight: 58,
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: white,
+    borderRadius: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: gray,
+    paddingHorizontal: 10,
+    paddingVertical: 15
   }
 })
