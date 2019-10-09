@@ -38,6 +38,7 @@
     "react-native-modal": "^11.4.0",
     "react-native-motion": "^1.0.4",
     "react-native-paper": "^2.16.0",
+    "react-native-peity": "^1.0.0",
     "react-native-ratings": "^6.4.0",
     "react-native-raw-bottom-sheet": "^2.0.2",
     "react-native-svg": "~9.5.1",
