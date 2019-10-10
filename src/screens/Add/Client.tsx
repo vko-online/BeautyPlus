@@ -35,6 +35,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             dark
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
             theme={{ colors: { primary: orangedark } }}
+            contentStyle={{ height: 50 }}
           >
             רומש
           </Button>

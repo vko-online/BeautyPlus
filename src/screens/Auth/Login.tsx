@@ -1,11 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, ImageBackground } from 'react-native'
+import { StyleSheet, View, Image } from 'react-native'
 import { Button, Modal, Title } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Background from 'src/components/background'
 import { orangedark } from 'src/constants/Colors'
 import { TextInput } from 'src/components/Inputs'
 import { withNavigation, NavigationScreenProp } from 'react-navigation'
+import Layout from 'src/constants/Layout'
+import { Vpane } from 'view-on-steroids'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -13,26 +15,35 @@ interface Props {
 function Screen ({ navigation }: Props) {
   return (
     <Background showHeader={false}>
-      <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='space-evenly'>
-        <Title style={s.title}>שדח חוקל תפסוה</Title>
-        <View>
-          <TextInput
-            placeholder='לופיטה םש'
-          />
-          <TextInput
-            placeholder='ירלולס'
-            style={{ marginTop: 20 }}
+      <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='flex-start'>
+        <View style={s.head}>
+          <Image
+            style={s.logo}
+            source={require('src/assets/images/logo_long.png')}
+            resizeMode='contain'
           />
         </View>
-        <Button
-          mode='contained'
-          dark
-          style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
-          theme={{ colors: { primary: orangedark } }}
-          onPress={() => navigation.navigate('Dashboard')}
-        >
-          רומש
-        </Button>
+        <Page flex={1} alignSelf='stretch' justifyContent='flex-end'>
+          <Vpane height={140} marginBottom={140} justifyContent='space-evenly' alignItems='stretch'>
+            <TextInput
+              placeholder='לופיטה םש'
+            />
+            <TextInput
+              placeholder='ירלולס'
+              style={{ marginTop: 20 }}
+            />
+          </Vpane>
+          <Button
+            mode='contained'
+            dark
+            style={s.button}
+            theme={{ colors: { primary: orangedark }, roundness: 5 }}
+            contentStyle={{ height: 50 }}
+            onPress={() => navigation.navigate('Dashboard')}
+          >
+            רומש
+          </Button>
+        </Page>
       </Page>
     </Background>
   )
@@ -43,6 +54,20 @@ Screen.navigationOptions = {
 }
 
 const s = StyleSheet.create({
+  head: {
+    alignItems: 'flex-start'
+  },
+  logo: {
+    marginTop: 40,
+    width: (Layout.window.width / 3) * 2,
+    alignSelf: 'flex-start'
+  },
+  button: {
+    marginTop: 20,
+    marginBottom: 50,
+    width: 150,
+    alignSelf: 'center'
+  },
   title: {
     fontSize: 24,
     fontFamily: 'levenim-bold',

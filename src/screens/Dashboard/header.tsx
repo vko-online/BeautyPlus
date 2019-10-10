@@ -12,6 +12,7 @@ interface Props {
   onLeft?: () => void
   onRight?: () => void
   onToday?: () => void
+  onAdd?: () => void
   todayIcon?: string
 }
 function Header ({
@@ -19,6 +20,7 @@ function Header ({
   text = 'September 1-7',
   onLeft,
   onRight,
+  onAdd,
   onToday,
   todayIcon = 'today'
  }: Props) {
@@ -33,7 +35,7 @@ function Header ({
       </Hpane>
       <Hpane alignItems='center'>
         <IconButton icon={todayIcon} theme={iconTheme} onPress={onToday} />
-        <IconButton icon='add' theme={iconTheme} />
+        <IconButton icon='add' theme={iconTheme} onPress={onAdd} />
         {children}
       </Hpane>
     </TopBar>

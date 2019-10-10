@@ -42,6 +42,7 @@ export default function Screen ({}: Props) {
         text={todayView ? moment(dates[1]).format('MMM DD') : range}
         onLeft={goBack}
         onRight={goForward}
+        onAdd={() => setOrderVisible(true)}
         onToday={() => setTodayView(!todayView)}
         todayIcon={todayView ? 'today' : 'date-range'}
       >

@@ -56,7 +56,8 @@ export default function ({ visible = false, onDismiss }: Props) {
             mode='contained'
             dark
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
-            theme={{ colors: { primary: orangedark } }}
+            theme={{ colors: { primary: orangedark }, roundness: 5 }}
+            contentStyle={{ height: 50 }}
           >
             רומש
           </Button>
@@ -64,7 +65,8 @@ export default function ({ visible = false, onDismiss }: Props) {
             mode='contained'
             dark
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
-            theme={{ colors: { primary: reddark } }}
+            theme={{ colors: { primary: reddark }, roundness: 5 }}
+            contentStyle={{ height: 50 }}
           >
             לוטיב
           </Button>
