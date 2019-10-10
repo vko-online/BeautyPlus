@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import { Text, Headline, Surface, TouchableRipple } from 'react-native-paper'
 import moment from 'moment'
+import 'moment/locale/he'
 import { groupBy } from 'lodash'
 import { Hpane, Vpane } from 'view-on-steroids'
 import { gray, graydark, white, lightGray, black, pink } from 'src/constants/Colors'
@@ -89,13 +90,13 @@ interface Props {
 }
 export default function ({ delimeter, dates, showSingle }: Props) {
   const employees = [{
-    name: 'John',
+    name: 'נתנאל',
     id: 0
   }, {
-    name: 'Katrin',
+    name: 'אדם',
     id: 1
   }, {
-    name: 'Sebastian',
+    name: 'בצלאל',
     id: 2
   }]
   const [activeId, setId] = useState(employees[0].id)
