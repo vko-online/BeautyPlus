@@ -7,7 +7,8 @@ import AddClient from 'src/screens/Add/Client'
 import AddService from 'src/screens/Add/Service'
 import AddOrder from 'src/screens/Add/Order'
 import { iconTheme } from 'src/constants/Colors'
-import Agenda from './agenda'
+import Agenda from './agenda1'
+import Timerange from './timerange'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -17,6 +18,7 @@ export default function Screen ({}: Props) {
   const [clientVisible, setClientVisible] = useState(false)
   const [orderVisible, setOrderVisible] = useState(false)
   const [serviceVisible, setServiceVisible] = useState(false)
+  const [delimeter, setDelimeter] = useState(20)
 
   return (
     <Page>
@@ -61,7 +63,8 @@ export default function Screen ({}: Props) {
         <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
       </Portal>
       <Page>
-        <Agenda />
+        <Timerange delimeter={delimeter} setDelimeter={setDelimeter} />
+        <Agenda delimeter={delimeter} />
       </Page>
     </Page>
   )

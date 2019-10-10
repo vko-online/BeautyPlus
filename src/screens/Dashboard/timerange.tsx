@@ -6,19 +6,22 @@ import { Ionicons } from '@expo/vector-icons'
 import TopBar from 'src/components/TopBar'
 import { white, black, gray } from 'src/constants/Colors'
 
-export default function () {
-  const [delimeter, setDelimeter] = useState(20)
+interface Props {
+  delimeter: number
+  setDelimeter: (val: number) => void
+}
+export default function ({ delimeter, setDelimeter }: Props) {
   return (
     <TopBar style={{ borderTopColor: white, borderTopWidth: StyleSheet.hairlineWidth }}>
       <Dropdown
-        value={delimeter}
+        value={delimeter.toString()}
         data={delimeters}
         rippleCentered
         rippleInsets={{ top: 0, left: 0, right: 0, bottom: 0 }}
         renderBase={() => (
           <View style={s.base}>
             <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
-            <Text style={s.baseText}>20</Text>
+            <Text style={s.baseText}>{delimeter}</Text>
           </View>
         )}
         onChangeText={(val) => setDelimeter(Number(val))}
