@@ -3,8 +3,9 @@ import {
   View,
   StyleSheet,
   ScrollView,
-  TouchableOpacity} from 'react-native'
-import { Text, Headline, TouchableRipple } from 'react-native-paper'
+  TouchableOpacity
+} from 'react-native'
+import { Text, Headline, Surface, TouchableRipple } from 'react-native-paper'
 import moment from 'moment'
 import { groupBy } from 'lodash'
 import { Hpane, Vpane } from 'view-on-steroids'
@@ -83,8 +84,10 @@ function Range ({ group, days }: RangeProps) {
 
 interface Props {
   delimeter: number
+  dates: Date[]
+  showSingle?: boolean
 }
-export default function ({ delimeter }: Props) {
+export default function ({ delimeter, dates, showSingle }: Props) {
   const employees = [{
     name: 'John',
     id: 0
@@ -111,72 +114,121 @@ export default function ({ delimeter }: Props) {
       return _a - _b
     })
   })
-  const days = [moment(date).add(-1, 'day').toDate(), date, moment(date).add(1, 'day').toDate(), TIMERANGE]
+  const days = [...dates, TIMERANGE]
 
   const otherEmployees = employees.filter(v => v.id !== activeId)
   const activeEmployee = employees.find(v => v.id === activeId)
   return (
     <Vpane alignItems='stretch'>
-      <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+      <Surface style={{ elevation: 3 }}>
         {
-          days.map((day, index) => {
-            if (typeof day === 'string' && day === TIMERANGE) {
-              return null
-            } else {
-              return (
-                <View key={index} style={s.headerDate}>
-                  <Text style={s.headerText}>{moment(day).format('MMM DD')}</Text>
-                </View>
-              )
-            }
-          })
+          showSingle ? (
+            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+              <View style={[s.headerDate, s.headerDateSingle]}>
+                <Text style={s.headerText}>{moment(days[1]).format('MMM DD')}</Text>
+              </View>
+            </Hpane>
+          ) : (
+            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+              {
+                days.map((day, index) => {
+                  if (typeof day === 'string' && day === TIMERANGE) {
+                    return null
+                  } else {
+                    return (
+                      <View key={index} style={s.headerDate}>
+                        <Text style={s.headerText}>{moment(day).format('MMM DD')}</Text>
+                      </View>
+                    )
+                  }
+                })
+              }
+            </Hpane>
+          )
         }
-      </Hpane>
-      <Hpane flexDirection='row-reverse'>
         {
-          otherEmployees.slice(0, 1).map((employee, index) => (
-            <TouchableRipple key={index} onPress={() => setId(employee.id)}>
+          showSingle ? (
+            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
               <Vpane
                 paddingTop={10}
                 alignItems='center'
                 borderWidth={StyleSheet.hairlineWidth}
                 borderColor={lightGray}
-                opacity={0.5}
+                opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{employee.name}</Text>
+                <Text>{activeEmployee.name}</Text>
               </Vpane>
-            </TouchableRipple>
-          ))
-        }
-        <Vpane
-          paddingTop={10}
-          alignItems='center'
-          borderWidth={StyleSheet.hairlineWidth}
-          borderColor={lightGray}
-          opacity={1}
-          width={(Layout.window.width - timeRangeWidth) / 3}>
-          <Ionicons name='ios-contact' size={30} />
-          <Text>{activeEmployee.name}</Text>
-        </Vpane>
-        {
-          otherEmployees.slice(1).map((employee, index) => (
-            <TouchableRipple key={index} onPress={() => setId(employee.id)}>
               <Vpane
                 paddingTop={10}
                 alignItems='center'
                 borderWidth={StyleSheet.hairlineWidth}
                 borderColor={lightGray}
-                opacity={0.5}
+                opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{employee.name}</Text>
+                <Text>{activeEmployee.name}</Text>
               </Vpane>
-            </TouchableRipple>
-          ))
+              <Vpane
+                paddingTop={10}
+                alignItems='center'
+                borderWidth={StyleSheet.hairlineWidth}
+                borderColor={lightGray}
+                opacity={1}
+                width={(Layout.window.width - timeRangeWidth) / 3}>
+                <Ionicons name='ios-contact' size={30} />
+                <Text>{activeEmployee.name}</Text>
+              </Vpane>
+            </Hpane>
+          ) : (
+            <Hpane flexDirection='row-reverse'>
+              {
+                otherEmployees.slice(0, 1).map((employee, index) => (
+                  <TouchableRipple key={index} onPress={() => setId(employee.id)}>
+                    <Vpane
+                      paddingTop={10}
+                      alignItems='center'
+                      borderWidth={StyleSheet.hairlineWidth}
+                      borderColor={lightGray}
+                      opacity={0.5}
+                      width={(Layout.window.width - timeRangeWidth) / 3}>
+                      <Ionicons name='ios-contact' size={30} />
+                      <Text>{employee.name}</Text>
+                    </Vpane>
+                  </TouchableRipple>
+                ))
+              }
+              <Vpane
+                paddingTop={10}
+                alignItems='center'
+                borderWidth={StyleSheet.hairlineWidth}
+                borderColor={lightGray}
+                opacity={1}
+                width={(Layout.window.width - timeRangeWidth) / 3}>
+                <Ionicons name='ios-contact' size={30} />
+                <Text>{activeEmployee.name}</Text>
+              </Vpane>
+              {
+                otherEmployees.slice(1).map((employee, index) => (
+                  <TouchableRipple key={index} onPress={() => setId(employee.id)}>
+                    <Vpane
+                      paddingTop={10}
+                      alignItems='center'
+                      borderWidth={StyleSheet.hairlineWidth}
+                      borderColor={lightGray}
+                      opacity={0.5}
+                      width={(Layout.window.width - timeRangeWidth) / 3}>
+                      <Ionicons name='ios-contact' size={30} />
+                      <Text>{employee.name}</Text>
+                    </Vpane>
+                  </TouchableRipple>
+                ))
+              }
+              <View style={{ width: (Layout.window.width - timeRangeWidth) / 3 }} />
+            </Hpane>
+          )
         }
-        <View style={{ width: (Layout.window.width - timeRangeWidth) / 3 }} />
-      </Hpane>
+      </Surface>
       <Range
         group={group}
         days={days}
@@ -192,6 +244,9 @@ const s = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
     backgroundColor: pink
+  },
+  headerDateSingle: {
+    width: (Layout.window.width - timeRangeWidth)
   },
   headerText: {
     color: black,

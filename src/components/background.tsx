@@ -2,18 +2,23 @@ import React, { ReactNode } from 'react'
 import { StyleSheet, Platform, ImageBackground, StyleProp, ViewStyle, View } from 'react-native'
 import Header from '../screens/Add/header'
 interface Props {
-  onDismiss: () => void
+  onDismiss?: () => void
   children: ReactNode
   style?: StyleProp<ViewStyle>
+  showHeader?: boolean
 }
-export default function ({ children, onDismiss, style }: Props) {
+export default function ({ children, onDismiss, style, showHeader = true }: Props) {
   return (
     <ImageBackground
       source={require('./Background.png')}
       style={[s.background, style]}
       resizeMode='stretch'
     >
-      <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: 30 }} />
+      {
+        showHeader && (
+          <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: 30 }} />
+        )
+      }
       {children}
     </ImageBackground>
   )
