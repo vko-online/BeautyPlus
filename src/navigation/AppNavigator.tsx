@@ -10,6 +10,6 @@ export default createAppContainer(
     Main: MainNavigator,
     Auth: AuthNavigator
   }, {
-    initialRouteName: 'Main'
+    initialRouteName: 'Auth'
   })
 )

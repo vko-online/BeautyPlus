@@ -62,8 +62,6 @@ export default function ({ visible = false, onDismiss }: Props) {
   )
 }
 const data = [{
-  value: '10'
-}, {
   value: '15'
 }, {
   value: '20'
@@ -71,10 +69,6 @@ const data = [{
   value: '30'
 }, {
   value: '60'
-}, {
-  value: '120'
-}, {
-  value: '180'
 }]
 const initialValue = data[0]
 const s = StyleSheet.create({

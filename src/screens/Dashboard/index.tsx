@@ -71,15 +71,6 @@ export default function Screen ({}: Props) {
             title='שדח לופיט תפסוה'
             key='add service'
           />
-          <Divider />
-          <Menu.Item
-            onPress={() => {
-              setOrderVisible(true)
-              setVisibility(false)
-            }}
-            title='add order'
-            key='add order'
-          />
         </Menu>
       </Header>
       <Portal>
@@ -107,7 +98,7 @@ export interface Order {
   color: string
 }
 const services = [
-  'haircut', 'nail', 'trim'
+  'תספורת', 'חתך ציפורניים', 'זקן לקצץ', 'צבע שיער'
 ]
 const colors = [
   '#0000FF',

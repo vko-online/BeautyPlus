@@ -1,17 +1,18 @@
-import React, { useState, createContext } from 'react'
-import { Platform, YellowBox, StatusBar, I18nManager } from 'react-native'
-import { Provider, Portal } from 'react-native-paper'
+import React, { useState } from 'react'
+import { YellowBox, StatusBar, I18nManager } from 'react-native'
+import { Provider } from 'react-native-paper'
 import { AppLoading } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { theme, graydark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
-import Page from 'src/components/Page'
+import { MaterialIcons } from '@expo/vector-icons'
 
+I18nManager.allowRTL(true)
 I18nManager.forceRTL(true)
 YellowBox.ignoreWarnings(['Require cycle'])
-export const ThemeContext = createContext('light')
 export default function App (props) {
+  I18nManager.forceRTL(true)
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
@@ -23,6 +24,7 @@ export default function App (props) {
       />
     )
   } else {
+    I18nManager.forceRTL(true)
     return (
       <Provider theme={theme}>
         <StatusBar barStyle='light-content' backgroundColor={graydark} />
@@ -35,14 +37,11 @@ export default function App (props) {
 async function loadResourcesAsync () {
   await Promise.all([
     Asset.loadAsync([
-      require('src/assets/images/robot-dev.png'),
-      require('src/assets/images/robot-prod.png')
+      require('src/components/Background.png')
     ]),
     Font.loadAsync({
-      'montserrat-light': require('src/assets/fonts/Montserrat-Light.ttf'),
-      'montserrat-thin': require('src/assets/fonts/Montserrat-Thin.ttf'),
-      'montserrat-medium': require('src/assets/fonts/Montserrat-Medium.ttf'),
-      'montserrat-regular': require('src/assets/fonts/Montserrat-Regular.ttf'),
+      ...MaterialIcons.font,
+      // ...MaterialIcons.glyphMap,
       'levenim-regular': require('src/assets/fonts/lvnm.ttf'),
       'levenim-bold': require('src/assets/fonts/lvnmbd.ttf')
     })
@@ -57,4 +56,5 @@ function handleLoadingError (error) {
 
 function handleFinishLoading (setLoadingComplete) {
   setLoadingComplete(true)
+  I18nManager.forceRTL(true)
 }

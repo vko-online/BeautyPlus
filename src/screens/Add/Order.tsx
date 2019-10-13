@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Platform } from 'react-native'
-import { Button, Modal, Text, Title } from 'react-native-paper'
+import { Button, Modal, Text, Title, TextInput as RNTextInput } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Header from './header'
 import { orangedark, reddark, black, white, gray } from 'src/constants/Colors'
@@ -42,7 +42,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             renderBase={() => (
               <View style={s.base}>
                 <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
-                <Text style={s.baseText}>20</Text>
+                <Text style={s.baseText}>בחר</Text>
               </View>
             )}
           />
@@ -77,11 +77,13 @@ export default function ({ visible = false, onDismiss }: Props) {
 }
 
 const data = [{
-  value: 'Banana'
+  value: 'זקן לקצץ'
 }, {
-  value: 'Mango'
+  value: 'חתך ציפורניים'
 }, {
-  value: 'Pear'
+  value: 'תספורת'
+}, {
+  value: 'צבע שיער'
 }]
 
 const s = StyleSheet.create({
