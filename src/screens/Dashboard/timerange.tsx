@@ -33,7 +33,7 @@ export default function ({ delimeter, setDelimeter }: Props) {
   )
 }
 
-const delimeters = [{ value: '20' }, { value: '30' }, { value: '60' } ]
+const delimeters = [{ value: '15' }, { value: '20' }, { value: '30' } ]
 const s = StyleSheet.create({
   dropdown: {
     // borderWidth: StyleSheet.hairlineWidth,

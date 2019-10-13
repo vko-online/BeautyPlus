@@ -27,7 +27,8 @@
       "package": "com.hairsoft.beautyplus"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hairsoft.beautyplus"
     }
   }
 }
