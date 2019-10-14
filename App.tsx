@@ -11,11 +11,11 @@ import { MaterialIcons } from '@expo/vector-icons'
 I18nManager.allowRTL(true)
 I18nManager.forceRTL(true)
 YellowBox.ignoreWarnings(['Require cycle'])
-export default function App (props) {
+export default function App () {
   I18nManager.forceRTL(true)
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
+  if (!isLoadingComplete) {
     return (
       <AppLoading
         startAsync={loadResourcesAsync}
@@ -41,7 +41,8 @@ async function loadResourcesAsync () {
     ]),
     Font.loadAsync({
       ...MaterialIcons.font,
-      // ...MaterialIcons.glyphMap,
+      'material': require('./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+      'Material Icons': require('./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
       'levenim-regular': require('src/assets/fonts/lvnm.ttf'),
       'levenim-bold': require('src/assets/fonts/lvnmbd.ttf')
     })

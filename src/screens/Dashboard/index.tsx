@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Portal, Menu, IconButton, Divider } from 'react-native-paper'
+import React, { useState, useEffect } from 'react'
+import { Portal, Menu, IconButton, ActivityIndicator } from 'react-native-paper'
 import { NavigationScreenProp } from 'react-navigation'
 import Header from './header'
 import Page from 'src/components/Page'
@@ -12,13 +12,15 @@ import Timerange from './timerange'
 import moment from 'moment'
 import faker from 'faker'
 import 'twix'
+import { getCalendarEvents, CalendarEvent } from 'src/components/api'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
 }
 const today = new Date()
 export default function Screen ({}: Props) {
-  const [orders] = useState(data)
+  const [loading, setLoading] = useState(true)
+  const [orders, setOrders] = useState<Array<CalendarEvent>>([])
   const [visible, setVisibility] = useState(false)
   const [clientVisible, setClientVisible] = useState(false)
   const [orderVisible, setOrderVisible] = useState(false)
@@ -30,6 +32,14 @@ export default function Screen ({}: Props) {
     today,
     moment(today).add(1, 'days').toDate()
   ])
+  useEffect(() => {
+    getCalendarEvents({
+      from: dates[0]
+    }).then((data: Array<CalendarEvent>) => {
+      setOrders(data)
+      setLoading(false)
+    }).catch(console.warn)
+  }, [dates])
   const range = moment(dates[0]).twix(dates[dates.length - 1], { allDay: true }).format()
 
   function goBack () {
@@ -80,12 +90,20 @@ export default function Screen ({}: Props) {
       </Portal>
       <Page>
         <Timerange delimeter={delimeter} setDelimeter={setDelimeter} />
-        <Agenda
-          orders={orders}
-          delimeter={delimeter}
-          dates={dates}
-          showSingle={todayView}
-        />
+        {
+          loading ? (
+            <Page justifyContent='center' alignItems='center'>
+              <ActivityIndicator />
+            </Page>
+          ) : (
+            <Agenda
+              orders={orders}
+              delimeter={delimeter}
+              dates={dates}
+              showSingle={todayView}
+            />
+          )
+        }
       </Page>
     </Page>
   )
@@ -97,36 +115,6 @@ export interface Order {
   duration: number
   color: string
 }
-const services = [
-  'תספורת', 'חתך ציפורניים', 'זקן לקצץ', 'צבע שיער'
-]
-const colors = [
-  '#0000FF',
-  '#00008B',
-  '#A52A2A',
-  '#800000',
-  '#808080',
-  '#696969',
-  '#008000',
-  '#006400',
-  '#FFA500',
-  '#FF8C00',
-  '#FFC0CB',
-  '#FF69B4'
-]
-function createEvent () {
-  return {
-    service: faker.random.arrayElement(services),
-    color: faker.random.arrayElement(colors),
-    duration: faker.random.number({
-      min: 30,
-      max: 60,
-      precision: 30
-    }),
-    date: faker.date.between(new Date(2019, 9, 11, 9, 0), new Date(2019, 9, 13, 17, 30))
-  }
-}
-const data = Array.from({ length: faker.random.number({ min: 10, max: 30 }) }, createEvent)
 
 Screen.navigationOptions = {
   header: null

@@ -14,6 +14,7 @@ import { gray, lightGray, black, pink, white } from 'src/constants/Colors'
 import Layout from 'src/constants/Layout'
 import { Ionicons } from '@expo/vector-icons'
 import { Order } from './index'
+import { CalendarEvent } from 'src/components/api'
 
 function getRangeOfDates (start, end, key, delimeter, arr = []) {
   if (start.isAfter(end)) throw new Error('start must precede end')
@@ -32,13 +33,18 @@ const width = (Layout.window.width - timeRangeWidth)
 interface RangeProps {
   group: Group
   days: Array<Date | string>
-  orders: Order[]
+  orders: CalendarEvent[]
   delimeter: number
 }
-function extractOrders ({ day, gr, delimeter }, orders) {
+interface ExtractOrders {
+  day: Date
+  gr: Date
+  delimeter: number
+}
+function extractOrders ({ day, gr, delimeter }: ExtractOrders, orders: CalendarEvent[]) {
   return orders
   .filter(v =>
-    moment(v.date).isBetween(
+    moment(v.startDate).isBetween(
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes')),
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes') + delimeter),
       'minutes',
@@ -46,67 +52,9 @@ function extractOrders ({ day, gr, delimeter }, orders) {
     )
   )
 }
-const extract = memoize(extractOrders)
+const extract = memoize<(arg: ExtractOrders, orders: CalendarEvent[]) => CalendarEvent[]>(extractOrders)
 function Range ({ group, days, orders, delimeter }: RangeProps) {
-  // function renderGroup () {
-
-  // }
-  // function renderGroupTime () {
-
-  // }
-  // function renderDay ({ item, index }, time, gr, day, indx) {
-  //   const groupTime = moment(gr).format('HH')
-  //   if (typeof day === 'string' && day === TIMERANGE) {
-  //     return (
-  //       <Hpane
-  //         key={index}
-  //         width={timeRangeWidth}
-  //         paddingHorizontal={10}
-  //         alignItems='flex-start'
-  //         borderTopColor={gray}
-  //         borderTopWidth={indx === 0 ? StyleSheet.hairlineWidth : 0}
-  //       >
-  //         <View
-  //           style={[
-  //             s.slot,
-  //             (group[time].length - 1 !== indx) && s.slotBorder]
-  //           }>
-  //           <Text style={s.timerangeText}>{moment(gr).format('mm')}</Text>
-  //         </View>
-  //         {
-  //           indx === 0 && (
-  //             <Headline style={s.timerangeText}>{groupTime}</Headline>
-  //           )
-  //         }
-  //       </Hpane>
-  //     )
-  //   } else {
-  //     const slotOrders = extract({ day, gr, delimeter }, orders)
-  //     return (
-  //       <View key={index} style={[s.range, indx === 0 && s.rangeFirst]}>
-  //         {
-  //           slotOrders.map((order, si) => (
-  //             <View
-  //               key={si}
-  //               style={[
-  //                 s.slotOrder, {
-  //                   backgroundColor: order.color,
-  //                   height: timeRangeHeight * order.duration / delimeter
-  //                 }
-  //               ]}
-  //             >
-  //               <Text style={{ color: white }}>
-  //                 {
-  //                   order.service
-  //                 }
-  //               </Text>
-  //             </View>
-  //           ))
-  //         }
-  //       </View>
-  //     )
-  //   }
-  // }
+  console.log('orders', orders)
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -144,7 +92,8 @@ function Range ({ group, days, orders, delimeter }: RangeProps) {
                         </Hpane>
                       )
                     } else {
-                      const slotOrders = extract({ day, gr, delimeter }, orders)
+                      const dayDate = day as Date
+                      const slotOrders = extract({ day: dayDate, gr, delimeter }, orders)
                       return (
                         <View key={i} style={[s.range, indx === 0 && s.rangeFirst]}>
                           {
@@ -154,13 +103,13 @@ function Range ({ group, days, orders, delimeter }: RangeProps) {
                                 style={[
                                   s.slotOrder, {
                                     backgroundColor: order.color,
-                                    height: timeRangeHeight * order.duration / delimeter
+                                    height: timeRangeHeight * (moment(order.startDate).diff(order.endDate, 'minutes')) / delimeter
                                   }
                                 ]}
                               >
                                 <Text style={{ color: white }}>
                                   {
-                                    order.service
+                                    order.serviceName
                                   }
                                 </Text>
                               </View>
@@ -183,7 +132,7 @@ interface Props {
   delimeter: number
   dates: Date[]
   showSingle?: boolean
-  orders: Order[]
+  orders: CalendarEvent[]
 }
 export default function ({ delimeter, dates, showSingle, orders }: Props) {
   const employees = [{
