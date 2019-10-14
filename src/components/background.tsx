@@ -16,7 +16,7 @@ export default function ({ children, onDismiss, style, showHeader = true }: Prop
     >
       {
         showHeader && (
-          <Header onPress={onDismiss} style={{ backgroundColor: 'transparent', paddingTop: 30 }} />
+          <Header onPress={onDismiss} style={{ backgroundColor: 'transparent' }} />
         )
       }
       {children}

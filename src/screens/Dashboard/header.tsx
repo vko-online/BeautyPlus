@@ -35,7 +35,7 @@ function Header ({
       </Hpane>
       <Hpane alignItems='center'>
         <IconButton icon={todayIcon} theme={iconTheme} onPress={onToday} />
-        <IconButton icon='add' theme={iconTheme} onPress={onAdd} />
+        <IconButton icon='plus' theme={iconTheme} onPress={onAdd} />
         {children}
       </Hpane>
     </TopBar>

@@ -6,8 +6,6 @@ import {
   Text
 } from 'react-native-paper'
 import Page from 'src/components/Page'
-import UnderConstruction from 'src/components/construction'
-import { black } from 'src/constants/Colors'
 import { Agenda, LocaleConfig } from 'react-native-calendars'
 LocaleConfig.locales['he'] = {
   monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],

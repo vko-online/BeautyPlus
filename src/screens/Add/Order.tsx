@@ -1,19 +1,26 @@
-import React from 'react'
-import { StyleSheet, View, Platform } from 'react-native'
-import { Button, Modal, Text, Title, TextInput as RNTextInput } from 'react-native-paper'
+import React, { useState } from 'react'
+import { StyleSheet, View, Platform, TouchableOpacity } from 'react-native'
+import { Button, Modal, Text, Title, TextInput as RNTextInput, IconButton } from 'react-native-paper'
 import Page from 'src/components/Page'
 import Header from './header'
-import { orangedark, reddark, black, white, gray } from 'src/constants/Colors'
+import { orangedark, reddark, black, white, gray, graydark } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
 import { Hpane } from 'view-on-steroids'
 import { TextInput } from 'src/components/Inputs'
 import { Ionicons } from '@expo/vector-icons'
+import DateTimePicker from 'react-native-modal-datetime-picker'
+import TopBar from 'src/components/TopBar'
 
 interface Props {
   visible: boolean
   onDismiss: () => void
 }
 export default function ({ visible = false, onDismiss }: Props) {
+  const [pickerVisible, setPickerVisibility] = useState(false)
+  function handleDatePicked (date) {
+    console.log('A date has been picked: ', date)
+    setPickerVisibility(false)
+  }
   return (
     <Modal
       onDismiss={onDismiss}
@@ -21,20 +28,33 @@ export default function ({ visible = false, onDismiss }: Props) {
       dismissable
       contentContainerStyle={{ flex: 1 }}
     >
-      <Header onPress={onDismiss} style={{ paddingTop: 30 }} />
-      <Page padding={20} justifyContent='space-evenly' backgroundColor='#fff'>
-        <View>
-          <Title style={s.title}>02.09.19</Title>
-          <Title style={s.title}>12.00</Title>
-        </View>
-        <View>
+      <TopBar style={{ backgroundColor: '#fff' }}>
+        <IconButton icon='close' theme={graydark} onPress={onDismiss} />
+      </TopBar>
+      <Page padding={20} justifyContent='flex-start' backgroundColor='#fff'>
+        <TouchableOpacity onPress={() => setPickerVisibility(true)}>
+          <>
+            <Title style={s.title}>02.09.19</Title>
+            <Title style={s.title}>12.00</Title>
+          </>
+        </TouchableOpacity>
+        <DateTimePicker
+          isVisible={pickerVisible}
+          onConfirm={handleDatePicked}
+          onCancel={() => setPickerVisibility(false)}
+        />
+        <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='חוקלה םש'
           />
+        </View>
+        <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='ןופלט'
             style={{ marginTop: 20 }}
           />
+        </View>
+        <View style={{ paddingVertical: 15 }}>
           <Dropdown
             data={data}
             labelFontSize={16}
@@ -46,12 +66,13 @@ export default function ({ visible = false, onDismiss }: Props) {
               </View>
             )}
           />
+        </View>
+        <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='תורעה'
-            style={{ marginTop: 20 }}
           />
         </View>
-        <Hpane alignItems='center'>
+        <Hpane alignItems='center' flex={1}>
           <Button
             mode='contained'
             dark
@@ -88,7 +109,7 @@ const data = [{
 
 const s = StyleSheet.create({
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: 'levenim-bold',
     color: black,
     textAlign: 'center',

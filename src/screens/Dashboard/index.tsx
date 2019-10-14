@@ -56,13 +56,13 @@ export default function Screen ({}: Props) {
         onRight={goForward}
         onAdd={() => setOrderVisible(true)}
         onToday={() => setTodayView(!todayView)}
-        todayIcon={todayView ? 'today' : 'date-range'}
+        todayIcon={todayView ? 'calendar-today' : 'calendar-week'}
       >
         <Menu
           visible={visible}
           onDismiss={() => setVisibility(false)}
           anchor={
-            <IconButton icon='more-vert' theme={iconTheme} onPress={() => setVisibility(true)} />
+            <IconButton icon='dots-vertical' theme={iconTheme} onPress={() => setVisibility(true)} />
           }
         >
           <Menu.Item

@@ -44,10 +44,22 @@ export const theme: Theme = {
     surface: extraExtraLightGray
   },
   fonts: {
-    light: 'levenim-regular',
-    medium: 'levenim-bold',
-    regular: 'levenim-regular',
-    thin: 'levenim-regular'
+    light: {
+      fontFamily: 'levenim-regular',
+      fontWeight: '300'
+    },
+    medium: {
+      fontFamily: 'levenim-bold',
+      fontWeight: '100'
+    },
+    regular: {
+      fontFamily: 'levenim-regular',
+      fontWeight: '500'
+    },
+    thin: {
+      fontFamily: 'levenim-regular',
+      fontWeight: '100'
+    }
   }
 }
 

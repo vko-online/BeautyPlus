@@ -1,5 +1,6 @@
 import { parseString } from 'react-native-xml2js'
 import moment from 'moment'
+import { get } from 'lodash'
 
 const defaults = {
   url: 'http://www.hairsoft.co.il',
@@ -95,5 +96,6 @@ function intToRGB (i) {
   return '#' + '00000'.substring(0, 6 - c.length) + c
 }
 export function transform (obj) {
-  return obj['soap:Envelope']['soap:Body'][0]['CalendarGetUserEvents2Response'][0]['SyncEvent'][0]['string'].map(extract)
+  return get(obj, 'soap:Envelope.soap:Body[0].CalendarGetUserEvents2Response[0].SyncEvent[0].string', []).filter(v => v.length).map(extract)
+  // return obj['soap:Envelope']['soap:Body'][0]['CalendarGetUserEvents2Response'][0]['SyncEvent'][0]['string'].filter(v => v.length).map(extract)
 }
