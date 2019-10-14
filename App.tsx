@@ -6,7 +6,7 @@ import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { theme, graydark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 I18nManager.allowRTL(true)
 I18nManager.forceRTL(true)
@@ -40,9 +40,8 @@ async function loadResourcesAsync () {
       require('src/components/Background.png')
     ]),
     Font.loadAsync({
-      ...MaterialIcons.font,
-      'material': require('./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
-      'Material Icons': require('./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+      ...MaterialCommunityIcons.font,
+      'MaterialCommunityIcons': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
       'levenim-regular': require('src/assets/fonts/lvnm.ttf'),
       'levenim-bold': require('src/assets/fonts/lvnmbd.ttf')
     })
