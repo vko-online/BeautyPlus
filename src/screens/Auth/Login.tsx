@@ -26,10 +26,10 @@ function Screen ({ navigation }: Props) {
         <Page flex={1} alignSelf='stretch' justifyContent='flex-end'>
           <Vpane height={140} marginBottom={140} justifyContent='space-evenly' alignItems='stretch'>
             <TextInput
-              placeholder='לופיטה םש'
+              placeholder='שם משתמש'
             />
             <TextInput
-              placeholder='ירלולס'
+              placeholder='סיסמה'
               style={{ marginTop: 20 }}
             />
           </Vpane>
@@ -41,7 +41,7 @@ function Screen ({ navigation }: Props) {
             contentStyle={{ height: 50 }}
             onPress={() => navigation.navigate('Dashboard')}
           >
-            רומש
+            כניסה
           </Button>
         </Page>
       </Page>

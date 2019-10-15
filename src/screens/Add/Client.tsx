@@ -20,13 +20,13 @@ export default function ({ visible = false, onDismiss }: Props) {
     >
       <Background onDismiss={onDismiss}>
         <Page flex={1} flexGrow={1} alignSelf='stretch' padding={20} justifyContent='space-evenly'>
-          <Title style={s.title}>שדח חוקל תפסוה</Title>
+          <Title style={s.title}>הוספת לקוח חדש</Title>
           <View>
             <TextInput
-              placeholder='לופיטה םש'
+              placeholder='שם הלקוח'
             />
             <TextInput
-              placeholder='ירלולס'
+              placeholder='סלולרי'
               style={{ marginTop: 20 }}
             />
           </View>
@@ -37,7 +37,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             theme={{ colors: { primary: orangedark } }}
             contentStyle={{ height: 50 }}
           >
-            רומש
+            שמור
           </Button>
         </Page>
       </Background>

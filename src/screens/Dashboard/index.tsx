@@ -70,7 +70,7 @@ export default function Screen ({}: Props) {
               setClientVisible(true)
               setVisibility(false)
             }}
-            title='שדח חוקל תפסוה'
+            title='הוספת לקוח חדש'
             key='add client'
           />
           <Menu.Item
@@ -78,7 +78,7 @@ export default function Screen ({}: Props) {
               setServiceVisible(true)
               setVisibility(false)
             }}
-            title='שדח לופיט תפסוה'
+            title='הוספת םיפול חרש'
             key='add service'
           />
         </Menu>

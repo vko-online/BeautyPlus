@@ -7,11 +7,11 @@ import * as Font from 'expo-font'
 import { theme, graydark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
 
-I18nManager.allowRTL(true)
-I18nManager.forceRTL(true)
+// I18nManager.allowRTL(true)
+// I18nManager.forceRTL(true)
 YellowBox.ignoreWarnings(['Require cycle'])
 export default function App () {
-  I18nManager.forceRTL(true)
+  // I18nManager.forceRTL(true)
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
   if (!isLoadingComplete) {
@@ -23,7 +23,7 @@ export default function App () {
       />
     )
   } else {
-    I18nManager.forceRTL(true)
+    // I18nManager.forceRTL(true)
     return (
       <Provider theme={theme}>
         <StatusBar barStyle='light-content' backgroundColor={graydark} />
@@ -52,5 +52,5 @@ function handleLoadingError (error) {
 
 function handleFinishLoading (setLoadingComplete) {
   setLoadingComplete(true)
-  I18nManager.forceRTL(true)
+  // I18nManager.forceRTL(true)
 }

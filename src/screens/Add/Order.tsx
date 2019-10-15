@@ -38,7 +38,7 @@ export default function ({ visible = false, onDismiss }: Props) {
         <TouchableOpacity onPress={() => setPickerVisibility(true)}>
           <>
             <Title style={s.title}>{moment(orderDate).format('DD.MM.YYYY')}</Title>
-            <Title style={s.title}>{moment(orderDate).format('hh:mm')}</Title>
+            <Title style={s.title}>{moment(orderDate).format('HH:mm')}</Title>
           </>
         </TouchableOpacity>
         <DateTimePicker
@@ -49,12 +49,12 @@ export default function ({ visible = false, onDismiss }: Props) {
         />
         <View style={{ paddingVertical: 15 }}>
           <TextInput
-            placeholder='חוקלה םש'
+            placeholder='שם הלקוח'
           />
         </View>
         <View style={{ paddingVertical: 15 }}>
           <TextInput
-            placeholder='ןופלט'
+            placeholder='טלפון'
             style={{ marginTop: 20 }}
           />
         </View>
@@ -66,14 +66,14 @@ export default function ({ visible = false, onDismiss }: Props) {
             renderBase={() => (
               <View style={s.base}>
                 <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
-                <Text style={s.baseText}>בחר</Text>
+                <Text style={s.baseText}>שם הטיפול</Text>
               </View>
             )}
           />
         </View>
         <View style={{ paddingVertical: 15 }}>
           <TextInput
-            placeholder='תורעה'
+            placeholder='הערות'
           />
         </View>
         <Hpane alignItems='center' flex={1}>
@@ -84,7 +84,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             theme={{ colors: { primary: orangedark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
           >
-            רומש
+            שמור
           </Button>
           <Button
             mode='contained'
@@ -93,7 +93,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             theme={{ colors: { primary: reddark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
           >
-            לוטיב
+            ביטול
           </Button>
         </Hpane>
       </Page>

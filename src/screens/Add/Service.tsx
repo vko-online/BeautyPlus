@@ -23,15 +23,15 @@ export default function ({ visible = false, onDismiss }: Props) {
     >
       <Background onDismiss={onDismiss}>
         <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
-          <Title style={s.title}>שדח לופיט תפסוה</Title>
+          <Title style={s.title}>הוספת םיפול חרש</Title>
           <View>
             <TextInput
-              placeholder='לופיטה םש'
+              placeholder='שם הטיפול'
               numberOfLines={1}
             />
             <View style={s.multiline}>
               <TextInput
-                placeholder='לופיט ןמז'
+                placeholder='זמן םיפול'
                 numberOfLines={1}
               />
               <Dropdown
@@ -54,7 +54,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             theme={{ colors: { primary: orangedark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
           >
-            רומש
+            שמור
           </Button>
         </Page>
       </Background>
