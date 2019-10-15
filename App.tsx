@@ -6,7 +6,6 @@ import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import { theme, graydark } from 'src/constants/Colors'
 import AppNavigator from 'src/navigation/AppNavigator'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 I18nManager.allowRTL(true)
 I18nManager.forceRTL(true)
@@ -40,8 +39,7 @@ async function loadResourcesAsync () {
       require('src/components/Background.png')
     ]),
     Font.loadAsync({
-      ...MaterialCommunityIcons.font,
-      'MaterialCommunityIcons': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+      'MaterialCommunityIcons': require('src/assets/fonts/MaterialCommunityIcons.ttf'),
       'levenim-regular': require('src/assets/fonts/lvnm.ttf'),
       'levenim-bold': require('src/assets/fonts/lvnmbd.ttf')
     })
@@ -49,8 +47,6 @@ async function loadResourcesAsync () {
 }
 
 function handleLoadingError (error) {
-  // In this case, you might want to report the error to your error reporting
-  // service, for example Sentry
   console.warn(error)
 }
 

@@ -10,6 +10,7 @@ import { TextInput } from 'src/components/Inputs'
 import { Ionicons } from '@expo/vector-icons'
 import DateTimePicker from 'react-native-modal-datetime-picker'
 import TopBar from 'src/components/TopBar'
+import moment from 'moment'
 
 interface Props {
   visible: boolean
@@ -17,8 +18,10 @@ interface Props {
 }
 export default function ({ visible = false, onDismiss }: Props) {
   const [pickerVisible, setPickerVisibility] = useState(false)
+  const [orderDate, setOrderDate] = useState(new Date())
   function handleDatePicked (date) {
     console.log('A date has been picked: ', date)
+    setOrderDate(date)
     setPickerVisibility(false)
   }
   return (
@@ -34,12 +37,13 @@ export default function ({ visible = false, onDismiss }: Props) {
       <Page padding={20} justifyContent='flex-start' backgroundColor='#fff'>
         <TouchableOpacity onPress={() => setPickerVisibility(true)}>
           <>
-            <Title style={s.title}>02.09.19</Title>
-            <Title style={s.title}>12.00</Title>
+            <Title style={s.title}>{moment(orderDate).format('DD.MM.YYYY')}</Title>
+            <Title style={s.title}>{moment(orderDate).format('hh:mm')}</Title>
           </>
         </TouchableOpacity>
         <DateTimePicker
           isVisible={pickerVisible}
+          mode='datetime'
           onConfirm={handleDatePicked}
           onCancel={() => setPickerVisibility(false)}
         />
