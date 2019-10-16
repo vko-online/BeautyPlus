@@ -1,0 +1,501 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-screens] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-screens/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-permissions] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-permissions/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.59.10] /Users/bwin/.gradle/caches/transforms-1/files-1.1/react-native-0.59.10.aar/65f8a3b1d5624e711dc020368ec06711/AndroidManifest.xml:2:1-13:12
+MERGED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-25:12
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/2ea0352e524f7097dcf3441a34d4a7dc/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/131f2d1d2493c33f80d4e601ebc31172/AndroidManifest.xml:17:1-22:12
+MERGED from [:unimodules-react-native-adapter] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-app-loader-provider] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-constants] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-constants/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-30:12
+MERGED from [:expo-font] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-font/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-keep-awake] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-linear-gradient] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-21:12
+MERGED from [:expo-sqlite] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-sqlite/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-web-browser] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-web-browser/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-barcode-scanner-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-camera-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-constants-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-face-detector-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-file-system-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-font-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-permissions-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-task-manager-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-core] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/core/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-image-loader-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-sensors-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:transition:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/a3ae6ae4a4e66c0ea9d769ed6b737720/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/78f7618e6380b503b485bb6fff3e519f/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/81e78b680cb45061004168bf6765923a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/1fb89015f6bdedac778256c66984717e/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/e6e278eac858da2f95052d9f59ec3dcf/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/fefccd0c31857883ad3b8e09778532a4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/1867781c1987f97989c314abfd631d20/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/724886a7925cd34db72c542ed8ed2de8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/53e110a70da3d4ee24edd5ae59ed1f84/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a1b54b4a36657b4c4fc220bb54dc6f5a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/695c2f68e537e65acefdca83c603a1c7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2f929424ad11daf60108131d1cc8010a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/f7aa18f246099084fb2ba22ffae21e17/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/c1fd08cbab647bd3cda7533b657e3a2e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/0a1dd92bad750aa39d69612472b80c47/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/59a23a4628df8ca0593b043849c21fc1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c653601c4450432bb7fbd1045cf5f05d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c691cf56fbb6b21ad9e75eafe772e6c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/11437a4cfd171510e1dad5adab5473a8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/4c45077c45e113f5e33680ba57533970/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/640901ef4e4f4423c73c08c13ced6f6a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/a5da84317cc8b6d95c9de8742093b7e4/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/b1acf52d3bc0b8d56e8bda17f6fcb141/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/005a05b262e525453f8a768500430fe7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d75142cb6dfa966cdfbda4f903d702a5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/6e2234a0fbe35b66a0691102ff522333/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/4db25e35c8e77046e0147e4a8f9820b7/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/5b2fd7b496a7a08a3a74ab17195aa42b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/7ad8cc4bf910336a764e063312f3965c/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:exifinterface:27.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/exifinterface-27.1.1.aar/3b8cfb33297196bfe203d1f64ece59fb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c82b67562669e1954b53b39ead3645c1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/e8a4ff8e649beb3f8c9373e6e4ed6f32/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8501dd2827aba848926f850ca723ce76/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5a0be56dc7e255f3f8cdd69b89e3d2ce/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/53f1bbfff972e1ce8404f9f359c59812/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/6613d124983266ad4288277ec9da428b/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/19ecbe6270088b90b6aea03a46beaa63/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/3a63ee086093b6344c9627025a4c672e/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/ede653bbe026ce3c4bc42b82503887d0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/349bb4c44a20d1a8ff59f7b8712bc47f/AndroidManifest.xml:2:1-13:12
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:2:1-30:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/1e7414c6bdda47e474a953c4f842ab00/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+	package
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:2:5-29
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-67
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.MANAGE_DOCUMENTS
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:8:22-72
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:10:22-72
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:11:22-71
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:12:22-63
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:13:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:16:5-81
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-81
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:12:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:17:5-79
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-79
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:14:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:18:5-65
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:18:22-62
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:19:22-69
+uses-permission#android.permission.READ_CALENDAR
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:20:5-72
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:20:22-69
+uses-permission#android.permission.WRITE_CALENDAR
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:21:5-73
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:21:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:22:5-80
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:5-80
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:22:22-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:23:5-71
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:23:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:24:5-81
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-81
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:24:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:25:5-73
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:25:22-70
+application
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:28:5-46:19
+MERGED from [com.facebook.react:react-native:0.59.10] /Users/bwin/.gradle/caches/transforms-1/files-1.1/react-native-0.59.10.aar/65f8a3b1d5624e711dc020368ec06711/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.59.10] /Users/bwin/.gradle/caches/transforms-1/files-1.1/react-native-0.59.10.aar/65f8a3b1d5624e711dc020368ec06711/AndroidManifest.xml:11:5-20
+MERGED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-23:19
+MERGED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-23:19
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-19:19
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-19:19
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/78f7618e6380b503b485bb6fff3e519f/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/78f7618e6380b503b485bb6fff3e519f/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/81e78b680cb45061004168bf6765923a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/81e78b680cb45061004168bf6765923a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/1fb89015f6bdedac778256c66984717e/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/1fb89015f6bdedac778256c66984717e/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/e6e278eac858da2f95052d9f59ec3dcf/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/e6e278eac858da2f95052d9f59ec3dcf/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/a5da84317cc8b6d95c9de8742093b7e4/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/a5da84317cc8b6d95c9de8742093b7e4/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/7ad8cc4bf910336a764e063312f3965c/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/7ad8cc4bf910336a764e063312f3965c/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/349bb4c44a20d1a8ff59f7b8712bc47f/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/349bb4c44a20d1a8ff59f7b8712bc47f/AndroidManifest.xml:11:5-20
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:18:5-28:19
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:18:5-28:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:30:7-39
+	android:roundIcon
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:32:7-52
+	android:icon
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:31:7-41
+	android:allowBackup
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:33:7-34
+	android:theme
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:34:7-38
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:29:7-38
+activity#com.beautyplus.MainActivity
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:35:7-44:18
+	android:label
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:37:9-41
+	android:windowSoftInputMode
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:39:9-51
+	android:configChanges
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:38:9-79
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:36:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:40:9-43:25
+action#android.intent.action.MAIN
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:41:13-65
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:41:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:42:13-73
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:42:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:45:7-84
+	android:name
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml:45:17-81
+uses-sdk
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-screens] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-screens/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-screens/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-permissions/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-permissions/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] /Users/bwin/.gradle/caches/transforms-1/files-1.1/react-native-0.59.10.aar/65f8a3b1d5624e711dc020368ec06711/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] /Users/bwin/.gradle/caches/transforms-1/files-1.1/react-native-0.59.10.aar/65f8a3b1d5624e711dc020368ec06711/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/2ea0352e524f7097dcf3441a34d4a7dc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/2ea0352e524f7097dcf3441a34d4a7dc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/131f2d1d2493c33f80d4e601ebc31172/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/131f2d1d2493c33f80d4e601ebc31172/AndroidManifest.xml:20:5-44
+MERGED from [:unimodules-react-native-adapter] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-react-native-adapter] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-constants/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-constants/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-font] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-font/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-font] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-font/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-sqlite/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-sqlite/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-web-browser/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-web-browser/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/core/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/@unimodules/core/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:transition:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/a3ae6ae4a4e66c0ea9d769ed6b737720/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/a3ae6ae4a4e66c0ea9d769ed6b737720/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/78f7618e6380b503b485bb6fff3e519f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/78f7618e6380b503b485bb6fff3e519f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/81e78b680cb45061004168bf6765923a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/81e78b680cb45061004168bf6765923a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/1fb89015f6bdedac778256c66984717e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/1fb89015f6bdedac778256c66984717e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/e6e278eac858da2f95052d9f59ec3dcf/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/e6e278eac858da2f95052d9f59ec3dcf/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/fefccd0c31857883ad3b8e09778532a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/fefccd0c31857883ad3b8e09778532a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/1867781c1987f97989c314abfd631d20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/1867781c1987f97989c314abfd631d20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/724886a7925cd34db72c542ed8ed2de8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/724886a7925cd34db72c542ed8ed2de8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/53e110a70da3d4ee24edd5ae59ed1f84/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/53e110a70da3d4ee24edd5ae59ed1f84/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a1b54b4a36657b4c4fc220bb54dc6f5a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a1b54b4a36657b4c4fc220bb54dc6f5a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/695c2f68e537e65acefdca83c603a1c7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/695c2f68e537e65acefdca83c603a1c7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2f929424ad11daf60108131d1cc8010a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2f929424ad11daf60108131d1cc8010a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/f7aa18f246099084fb2ba22ffae21e17/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/f7aa18f246099084fb2ba22ffae21e17/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/c1fd08cbab647bd3cda7533b657e3a2e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/c1fd08cbab647bd3cda7533b657e3a2e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/0a1dd92bad750aa39d69612472b80c47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/0a1dd92bad750aa39d69612472b80c47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/59a23a4628df8ca0593b043849c21fc1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/59a23a4628df8ca0593b043849c21fc1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c653601c4450432bb7fbd1045cf5f05d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c653601c4450432bb7fbd1045cf5f05d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c691cf56fbb6b21ad9e75eafe772e6c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c691cf56fbb6b21ad9e75eafe772e6c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/11437a4cfd171510e1dad5adab5473a8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/11437a4cfd171510e1dad5adab5473a8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/4c45077c45e113f5e33680ba57533970/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/4c45077c45e113f5e33680ba57533970/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/640901ef4e4f4423c73c08c13ced6f6a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/640901ef4e4f4423c73c08c13ced6f6a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8287f1dfd7a395916b55592b2f6011a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/a5da84317cc8b6d95c9de8742093b7e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/a5da84317cc8b6d95c9de8742093b7e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/b1acf52d3bc0b8d56e8bda17f6fcb141/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/b1acf52d3bc0b8d56e8bda17f6fcb141/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/005a05b262e525453f8a768500430fe7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/005a05b262e525453f8a768500430fe7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d75142cb6dfa966cdfbda4f903d702a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d75142cb6dfa966cdfbda4f903d702a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/6e2234a0fbe35b66a0691102ff522333/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/6e2234a0fbe35b66a0691102ff522333/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/4db25e35c8e77046e0147e4a8f9820b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/4db25e35c8e77046e0147e4a8f9820b7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/5b2fd7b496a7a08a3a74ab17195aa42b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/5b2fd7b496a7a08a3a74ab17195aa42b/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/7ad8cc4bf910336a764e063312f3965c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/7ad8cc4bf910336a764e063312f3965c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:exifinterface:27.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/exifinterface-27.1.1.aar/3b8cfb33297196bfe203d1f64ece59fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/exifinterface-27.1.1.aar/3b8cfb33297196bfe203d1f64ece59fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c82b67562669e1954b53b39ead3645c1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c82b67562669e1954b53b39ead3645c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/e8a4ff8e649beb3f8c9373e6e4ed6f32/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/e8a4ff8e649beb3f8c9373e6e4ed6f32/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8501dd2827aba848926f850ca723ce76/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8501dd2827aba848926f850ca723ce76/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5a0be56dc7e255f3f8cdd69b89e3d2ce/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5a0be56dc7e255f3f8cdd69b89e3d2ce/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/53f1bbfff972e1ce8404f9f359c59812/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/53f1bbfff972e1ce8404f9f359c59812/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/6613d124983266ad4288277ec9da428b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/6613d124983266ad4288277ec9da428b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/19ecbe6270088b90b6aea03a46beaa63/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/19ecbe6270088b90b6aea03a46beaa63/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/3a63ee086093b6344c9627025a4c672e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/3a63ee086093b6344c9627025a4c672e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/ede653bbe026ce3c4bc42b82503887d0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/ede653bbe026ce3c4bc42b82503887d0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/349bb4c44a20d1a8ff59f7b8712bc47f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/349bb4c44a20d1a8ff59f7b8712bc47f/AndroidManifest.xml:7:5-9:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:8:5-10:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/1e7414c6bdda47e474a953c4f842ab00/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/bwin/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/1e7414c6bdda47e474a953c4f842ab00/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bwin/Documents/Dev/github/BeautyPlus/android/app/src/main/AndroidManifest.xml
+provider#expo.modules.imagepicker.ImagePickerFileProvider
+ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:9-22:20
+	android:grantUriPermissions
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:18:13-47
+	android:authorities
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:13-75
+	android:exported
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:13-76
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:13-21:71
+	android:resource
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:21:17-68
+	android:name
+		ADDED from [:expo-image-picker] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:20:17-67
+uses-permission#android.permission.STORAGE
+ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:22-63
+provider#expo.modules.filesystem.FileSystemFileProvider
+ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:18:9-27:20
+	android:grantUriPermissions
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:20:13-74
+	android:exported
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:21:13-37
+	tools:replace
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:23:13-48
+	android:name
+		ADDED from [:expo-file-system] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:13-74
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:22-74
+service#expo.modules.location.services.LocationTaskService
+ADDED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:expo-location] /Users/bwin/Documents/Dev/github/BeautyPlus/node_modules/expo/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:13-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fdb8549226eb1c8d4d7bdf022f755a2a/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bwin/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/e846a193c00d08725a34e42e224d6cb0/AndroidManifest.xml:24:13-58
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:13:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:15:5-98
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:15:22-95
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:16:5-94
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:16:22-91
+service#io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:20:13-132
+service#io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:23:13-127
+service#io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/bwin/.gradle/caches/transforms-1/files-1.1/library-3.2.11.aar/0c249275e8d34a121f4e39d5b4a2304f/AndroidManifest.xml:26:13-120

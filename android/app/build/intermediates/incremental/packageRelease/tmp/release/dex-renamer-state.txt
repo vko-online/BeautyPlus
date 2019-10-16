@@ -1,0 +1,4 @@
+#Wed Oct 16 13:19:49 ALMT 2019
+base.0=/Users/bwin/Documents/Dev/github/BeautyPlus/android/app/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex
