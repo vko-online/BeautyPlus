@@ -1,0 +1,37 @@
+{
+  "name": "BeautyPlus",
+  "displayName": "Beauty Plus",
+  "expo": {
+    "name": "BeautyPlus",
+    "slug": "beauty-plus",
+    "privacy": "unlisted",
+    "sdkVersion": "35.0.0",
+    "version": "1.0.0",
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "orientation": "portrait",
+    "icon": "./src/assets/images/icon.png",
+    "splash": {
+      "image": "./src/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#445c67"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.hairsoft.beautyplus"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hairsoft.beautyplus"
+    }
+  }
+}
