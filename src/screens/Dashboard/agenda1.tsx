@@ -30,6 +30,8 @@ const timeRangeHeight = 40
 const timeRangeWidth = 70
 const TIMERANGE = 'TIMERANGE'
 const width = (Layout.window.width - timeRangeWidth)
+const direction = I18nManager.isRTL ? 'row-reverse' : 'row'
+console.log('I18nManager.isRTL', I18nManager.isRTL)
 interface RangeProps {
   group: Group
   days: Array<Date | string>
@@ -54,7 +56,6 @@ function extractOrders ({ day, gr, delimeter }: ExtractOrders, orders: CalendarE
 }
 const extract = memoize<(arg: ExtractOrders, orders: CalendarEvent[]) => CalendarEvent[]>(extractOrders)
 function Range ({ group, days, orders, delimeter }: RangeProps) {
-  const direciton = I18nManager.isRTL ? 'row' : 'row-reverse'
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -63,7 +64,7 @@ function Range ({ group, days, orders, delimeter }: RangeProps) {
       {
         Object.keys(group).map((time, index) => (// 12:00
           group[time].map((gr, indx) => (
-            <Hpane key={indx} flexDirection={direciton}>
+            <Hpane key={indx} flexDirection={direction}>
                 {
                   days.map((day, i) => {// 1, 2, 3
                     const groupTime = moment(gr).format('HH')
@@ -171,13 +172,13 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
       <Surface style={{ elevation: 3 }}>
         {
           showSingle ? (
-            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+            <Hpane flexDirection={direction} justifyContent='flex-start'>
               <View style={[s.headerDate, s.headerDateSingle]}>
                 <Text style={s.headerText}>{moment(days[1]).format('MMM DD')}</Text>
               </View>
             </Hpane>
           ) : (
-            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+            <Hpane flexDirection={direction} justifyContent='flex-start'>
               {
                 days.map((day, index) => {
                   if (typeof day === 'string' && day === TIMERANGE) {
@@ -196,7 +197,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
         }
         {
           showSingle ? (
-            <Hpane flexDirection='row-reverse' justifyContent='flex-start'>
+            <Hpane flexDirection={direction} justifyContent='flex-start'>
               <Vpane
                 paddingTop={10}
                 alignItems='center'
@@ -229,7 +230,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
               </Vpane>
             </Hpane>
           ) : (
-            <Hpane flexDirection='row-reverse'>
+            <Hpane flexDirection={direction}>
               {
                 otherEmployees.slice(0, 1).map((employee, index) => (
                   <TouchableRipple key={index} onPress={() => setId(employee.id)}>
@@ -299,8 +300,8 @@ const s = StyleSheet.create({
     width
   },
   headerText: {
-    color: black,
-    fontFamily: 'levenim-bold'
+    color: black
+    // fontFamily: 'levenim-bold'
   },
   slotOrder: {
     width: width / 3,

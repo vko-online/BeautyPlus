@@ -42,25 +42,25 @@ export const theme: Theme = {
     error: 'red',
     placeholder: lightGray,
     surface: extraExtraLightGray
-  },
-  fonts: {
-    light: {
-      fontFamily: 'levenim-regular',
-      fontWeight: '300'
-    },
-    medium: {
-      fontFamily: 'levenim-bold',
-      fontWeight: '100'
-    },
-    regular: {
-      fontFamily: 'levenim-regular',
-      fontWeight: '500'
-    },
-    thin: {
-      fontFamily: 'levenim-regular',
-      fontWeight: '100'
-    }
   }
+  // fonts: {
+  //   light: {
+  //     fontFamily: 'levenim-regular',
+  //     fontWeight: '300'
+  //   },
+  //   medium: {
+  //     fontFamily: 'levenim-bold',
+  //     fontWeight: '100'
+  //   },
+  //   regular: {
+  //     fontFamily: 'levenim-regular',
+  //     fontWeight: '500'
+  //   },
+  //   thin: {
+  //     fontFamily: 'levenim-regular',
+  //     fontWeight: '100'
+  //   }
+  // }
 }
 
 export const iconTheme = { colors: { text: white } }

@@ -114,7 +114,7 @@ const data = [{
 const s = StyleSheet.create({
   title: {
     fontSize: 20,
-    fontFamily: 'levenim-bold',
+    // fontFamily: 'levenim-bold',
     color: black,
     textAlign: 'center',
     fontWeight: 'bold'
@@ -127,8 +127,8 @@ const s = StyleSheet.create({
     flex: 1,
     marginRight: 10,
     fontSize: 16,
-    color: black,
-    fontFamily: 'levenim-regular'
+    color: black
+    // fontFamily: 'levenim-regular'
   },
   base: {
     marginTop: 20,

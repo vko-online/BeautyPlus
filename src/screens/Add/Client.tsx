@@ -48,7 +48,7 @@ export default function ({ visible = false, onDismiss }: Props) {
 const s = StyleSheet.create({
   title: {
     fontSize: 24,
-    fontFamily: 'levenim-bold',
+    // fontFamily: 'levenim-bold',
     color: orangedark,
     textAlign: 'center',
     fontWeight: 'bold'
