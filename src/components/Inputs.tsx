@@ -32,7 +32,7 @@ const s = StyleSheet.create({
     fontSize: 20,
     flex: 1,
     minHeight: 58,
-    textAlign: 'right'
-    // fontFamily: 'levenim-regular'
+    textAlign: 'right',
+    fontFamily: 'LevenimMT'
   }
 })

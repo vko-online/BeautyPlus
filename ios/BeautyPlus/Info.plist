@@ -66,7 +66,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow Beauty Plus to access your microphone</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Allow Beauty Plus to access your device's accelerometer</string>
+	<string>Allow Beauty Plus to access your device&apos;s accelerometer</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Give Beauty Plus periences permission to save photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -91,8 +91,8 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>lvnm.ttf</string>
-		<string>lvnmbd.ttf</string>
+		<string>LevenimMT-Bold.ttf</string>
+		<string>LevenimMT.ttf</string>
 	</array>
 </dict>
 </plist>

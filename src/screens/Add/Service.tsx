@@ -74,7 +74,7 @@ const initialValue = data[0]
 const s = StyleSheet.create({
   title: {
     fontSize: 24,
-    // fontFamily: 'levenim-bold',
+    fontFamily: 'LevenimMT-Bold',
     color: orangedark,
     textAlign: 'center',
     fontWeight: 'bold'
@@ -104,11 +104,11 @@ const s = StyleSheet.create({
   baseText: {
     marginRight: 10,
     fontSize: 16,
-    color: black
-    // fontFamily: 'levenim-regular'
+    color: black,
+    fontFamily: 'LevenimMT'
   },
   item: {
-    // fontFamily: 'levenim-regular',
+    fontFamily: 'LevenimMT',
     fontSize: 16
   }
 })

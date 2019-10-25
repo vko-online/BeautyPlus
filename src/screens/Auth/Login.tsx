@@ -70,7 +70,7 @@ const s = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    // fontFamily: 'levenim-bold',
+    fontFamily: 'LevenimMT-Bold',
     color: orangedark,
     textAlign: 'center',
     fontWeight: 'bold'

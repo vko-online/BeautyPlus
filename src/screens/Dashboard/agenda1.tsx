@@ -300,8 +300,8 @@ const s = StyleSheet.create({
     width
   },
   headerText: {
-    color: black
-    // fontFamily: 'levenim-bold'
+    color: black,
+    fontFamily: 'LevenimMT-Bold'
   },
   slotOrder: {
     width: width / 3,

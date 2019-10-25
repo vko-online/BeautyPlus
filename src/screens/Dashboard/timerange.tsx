@@ -57,8 +57,8 @@ const s = StyleSheet.create({
   },
   baseText: {
     marginRight: 6,
-    color: black
-    // fontFamily: 'levenim-bold'
+    color: black,
+    fontFamily: 'LevenimMT-Bold'
   },
   dropdownInput: {
     color: '#fff',
