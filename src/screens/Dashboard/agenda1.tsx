@@ -31,7 +31,6 @@ const timeRangeWidth = 70
 const TIMERANGE = 'TIMERANGE'
 const width = (Layout.window.width - timeRangeWidth)
 const direction = I18nManager.isRTL ? 'row-reverse' : 'row'
-console.log('I18nManager.isRTL', I18nManager.isRTL)
 interface RangeProps {
   group: Group
   days: Array<Date | string>

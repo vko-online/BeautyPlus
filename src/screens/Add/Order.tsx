@@ -32,7 +32,7 @@ export default function ({ visible = false, onDismiss }: Props) {
       contentContainerStyle={{ flex: 1 }}
     >
       <TopBar style={{ backgroundColor: '#fff' }}>
-        <IconButton icon='close' color='#fff' onPress={onDismiss} />
+        <IconButton icon='close' color={graydark} onPress={onDismiss} />
       </TopBar>
       <Page padding={20} justifyContent='flex-start' backgroundColor='#fff'>
         <TouchableOpacity onPress={() => setPickerVisibility(true)}>
