@@ -10,9 +10,8 @@ import { iconTheme } from 'src/constants/Colors'
 import Agenda from './agenda1'
 import Timerange from './timerange'
 import moment from 'moment'
-import faker from 'faker'
 import 'twix'
-import { getCalendarEvents, CalendarEvent } from 'src/components/api'
+import { defaults, getCalendarEvents, CalendarEvent } from 'src/components/api'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -33,9 +32,10 @@ export default function Screen ({}: Props) {
     moment(today).add(1, 'days').toDate()
   ])
   useEffect(() => {
-    getCalendarEvents({
-      from: dates[0]
-    }).then((data: Array<CalendarEvent>) => {
+    const date = moment(dates[0]).format('DDMMYYYY')
+    console.log('date', date)
+    getCalendarEvents(defaults.user, 'ALL', Number(date)).then(data => {
+      console.log('data', data)
       setOrders(data)
       setLoading(false)
     }).catch(console.warn)

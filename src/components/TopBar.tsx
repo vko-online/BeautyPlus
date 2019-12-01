@@ -7,7 +7,7 @@ interface Props {
   children?: ReactNode
   style?: StyleProp<ViewStyle>
 }
-const direction = I18nManager.isRTL ? 'row' : 'row-reverse'
+const direction = I18nManager.isRTL ? 'row-reverse' : 'row'
 export default function ({ children, style }: Props) {
   return (
     <Hpane alignItems='center' backgroundColor={graydark} flexDirection={direction} {...style}>

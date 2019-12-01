@@ -45,7 +45,7 @@ interface ExtractOrders {
 function extractOrders ({ day, gr, delimeter }: ExtractOrders, orders: CalendarEvent[]) {
   return orders
   .filter(v =>
-    moment(v.startDate).isBetween(
+    moment(v.StartDateTime, 'DD/MM/YYYY hh:mm:ss').isBetween(
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes')),
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes') + delimeter),
       'minutes',
@@ -102,14 +102,14 @@ function Range ({ group, days, orders, delimeter }: RangeProps) {
                                 key={si}
                                 style={[
                                   s.slotOrder, {
-                                    backgroundColor: order.color,
-                                    height: timeRangeHeight * (moment(order.startDate).diff(order.endDate, 'minutes')) / delimeter
+                                    backgroundColor: 'red',
+                                    height: timeRangeHeight * (moment(order.StartDateTime, 'DD/MM/YYYY hh:mm:ss').diff(moment(order.EndDateTime, 'DD/MM/YYYY hh:mm:ss'), 'minutes')) / delimeter
                                   }
                                 ]}
                               >
                                 <Text style={{ color: white }}>
                                   {
-                                    order.serviceName
+                                    order.EventName
                                   }
                                 </Text>
                               </View>
