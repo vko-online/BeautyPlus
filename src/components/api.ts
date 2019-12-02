@@ -18,7 +18,7 @@ function getUrl (params = {}) {
   return `${defaults.url}/api.aspx?${query}`
 }
 
-interface User {
+export interface User {
   Id: string
   UserName: string
   UserPassword: string

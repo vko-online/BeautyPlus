@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   StyleSheet,
@@ -14,7 +14,7 @@ import { gray, lightGray, black, pink, white } from 'src/constants/Colors'
 import Layout from 'src/constants/Layout'
 import { Ionicons } from 'react-native-vector-icons'
 import { Order } from './index'
-import { CalendarEvent } from 'src/components/api'
+import { CalendarEvent, User } from 'src/components/api'
 
 function getRangeOfDates (start, end, key, delimeter, arr = []) {
   if (start.isAfter(end)) throw new Error('start must precede end')
@@ -133,19 +133,11 @@ interface Props {
   dates: Date[]
   showSingle?: boolean
   orders: CalendarEvent[]
+  employees: User[]
+  id: string
+  onSet: (id: string) => void
 }
-export default function ({ delimeter, dates, showSingle, orders }: Props) {
-  const employees = [{
-    name: 'נתנאל',
-    id: 0
-  }, {
-    name: 'אדם',
-    id: 1
-  }, {
-    name: 'בצלאל',
-    id: 2
-  }]
-  const [activeId, setId] = useState(employees[0].id)
+export default function ({ employees, delimeter, dates, showSingle, orders, id, onSet }: Props) {
   const date = new Date()
   const startOfDay = moment(date).set('hour', 7).set('minute', 60 - delimeter)
   const endOfDay = moment(date).set('hour', 23).set('minute', 60 - delimeter)
@@ -163,8 +155,8 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
   })
   const days = [...dates, TIMERANGE]
 
-  const otherEmployees = employees.filter(v => v.id !== activeId)
-  const activeEmployee = employees.find(v => v.id === activeId)
+  const otherEmployees = employees.filter(v => v.Id !== id)
+  const activeEmployee = employees.find(v => v.Id === id)
 
   return (
     <Vpane alignItems='stretch'>
@@ -205,7 +197,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee.name}</Text>
+                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               <Vpane
                 paddingTop={10}
@@ -215,7 +207,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee.name}</Text>
+                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               <Vpane
                 paddingTop={10}
@@ -225,14 +217,14 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee.name}</Text>
+                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
             </Hpane>
           ) : (
             <Hpane flexDirection={direction}>
               {
                 otherEmployees.slice(0, 1).map((employee, index) => (
-                  <TouchableRipple key={index} onPress={() => setId(employee.id)}>
+                  <TouchableRipple key={index} onPress={() => onSet(employee.Id)}>
                     <Vpane
                       paddingTop={10}
                       alignItems='center'
@@ -241,7 +233,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                       opacity={0.5}
                       width={(Layout.window.width - timeRangeWidth) / 3}>
                       <Ionicons name='ios-contact' size={30} />
-                      <Text>{employee.name}</Text>
+                      <Text>{employee.UserName}</Text>
                     </Vpane>
                   </TouchableRipple>
                 ))
@@ -254,11 +246,11 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee.name}</Text>
+                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               {
                 otherEmployees.slice(1).map((employee, index) => (
-                  <TouchableRipple key={index} onPress={() => setId(employee.id)}>
+                  <TouchableRipple key={index} onPress={() => onSet(employee.Id)}>
                     <Vpane
                       paddingTop={10}
                       alignItems='center'
@@ -267,7 +259,7 @@ export default function ({ delimeter, dates, showSingle, orders }: Props) {
                       opacity={0.5}
                       width={width / 3}>
                       <Ionicons name='ios-contact' size={30} />
-                      <Text>{employee.name}</Text>
+                      <Text>{employee.UserName}</Text>
                     </Vpane>
                   </TouchableRipple>
                 ))

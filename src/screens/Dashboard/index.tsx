@@ -11,7 +11,7 @@ import Agenda from './agenda1'
 import Timerange from './timerange'
 import moment from 'moment'
 import 'twix'
-import { defaults, getCalendarEvents, CalendarEvent } from 'src/components/api'
+import { defaults, getCalendarEvents, CalendarEvent, getUsers, User } from 'src/components/api'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -19,6 +19,8 @@ interface Props {
 const today = new Date()
 export default function Screen ({}: Props) {
   const [loading, setLoading] = useState(true)
+  const [employees, setEmployees] = useState<User[]>([])
+  const [activeId, setId] = useState(null)
   const [orders, setOrders] = useState<Array<CalendarEvent>>([])
   const [visible, setVisibility] = useState(false)
   const [clientVisible, setClientVisible] = useState(false)
@@ -33,13 +35,13 @@ export default function Screen ({}: Props) {
   ])
   useEffect(() => {
     const date = moment(dates[0]).format('DDMMYYYY')
-    console.log('date', date)
-    getCalendarEvents(defaults.user, 'ALL', Number(date)).then(data => {
-      console.log('data', data)
+    const activeUser = employees.find(v => v.Id === activeId)
+    const username = activeUser ? activeUser.UserName : defaults.user
+    getCalendarEvents(username, 'ALL', Number(date)).then(data => {
       setOrders(data)
       setLoading(false)
     }).catch(console.warn)
-  }, [dates])
+  }, [dates, orderVisible, activeId])
   const range = moment(dates[0]).twix(dates[dates.length - 1], { allDay: true }).format()
 
   function goBack () {
@@ -48,6 +50,17 @@ export default function Screen ({}: Props) {
   function goForward () {
     setDates(dates.map(v => moment(v).add(1, 'days').toDate()))
   }
+
+  async function fetchUsers () {
+    const users = await getUsers()
+    setEmployees(users)
+    setId(users[0].Id)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
   return (
     <Page>
       <Header
@@ -100,7 +113,10 @@ export default function Screen ({}: Props) {
               orders={orders}
               delimeter={delimeter}
               dates={dates}
+              employees={employees}
               showSingle={todayView}
+              id={activeId}
+              onSet={id => setId(id)}
             />
           )
         }

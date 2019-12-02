@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { StyleSheet, View, Platform, TouchableOpacity } from 'react-native'
 import { Button, Modal, Text, Title, TextInput as RNTextInput, IconButton } from 'react-native-paper'
 import Page from 'src/components/Page'
-import Header from './header'
 import { orangedark, reddark, black, white, gray, graydark } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
 import { Hpane } from 'view-on-steroids'
@@ -48,13 +47,12 @@ export default function ({ visible = false, onDismiss }: Props) {
     const endDateTime = moment(form.startDateTime).add(item.duration, 'minutes').toDate()
     addCalendarEvent(
       undefined,
-      moment(form.startDateTime).format('DDMMYYYYhhmm'),
-      moment(endDateTime).format('DDMMYYYYhhmm'),
+      moment(form.startDateTime).format('DDMMYYYYHHmm'),
+      moment(endDateTime).format('DDMMYYYYHHmm'),
       form.clientName,
       form.eventName,
-      form.eventDescription,
-      undefined
-    ).then(console.info)
+      form.eventDescription
+    ).then(onDismiss)
   }
   console.log('errors', errors)
   return (
@@ -78,6 +76,7 @@ export default function ({ visible = false, onDismiss }: Props) {
           isVisible={pickerVisible}
           mode='datetime'
           is24Hour
+          minuteInterval={15}
           ref={register({ name: 'startDateTime' })}
           onConfirm={handleDatePicked}
           onCancel={() => setPickerVisibility(false)}
@@ -147,6 +146,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
             theme={{ colors: { primary: reddark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
+            onPress={onDismiss}
           >
             ביטול
           </Button>
