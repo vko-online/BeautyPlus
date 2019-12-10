@@ -1,3 +1,5 @@
+import AsyncStorage from '@react-native-community/async-storage'
+
 export const defaults = {
   url: 'http://www.hairsoft.co.il',
   user: 'medet',
@@ -35,8 +37,39 @@ export function getUsers (): Promise<User[]> {
   return fetch(url).then(res => res.json()).then(res => res.response.items)
 }
 
-export function addCalendarEvent (
-  userName: string = defaults.user,
+export function login (login: string, password: string) {
+  const url = getUrl({
+    action: 'Login',
+    login,
+    password
+  })
+
+  return fetch(url).then(res => res.json())
+}
+
+export async function addClient (clientName, phone) {
+  const url = getUrl({
+    action: 'ClientCreate',
+    token: defaults.token,
+    clientName,
+    phone
+  })
+
+  return fetch(url).then(res => res.json())
+}
+
+export async function addService (serviceName, duration) {
+  const url = getUrl({
+    action: 'ServiceCreate',
+    token: defaults.token,
+    serviceName,
+    duration
+  })
+
+  return fetch(url).then(res => res.json())
+}
+
+export async function addCalendarEvent (
   startDateTime: string,
   endDateTime: string,
   clientName: string,
@@ -46,7 +79,7 @@ export function addCalendarEvent (
   console.log(startDateTime, eventName, eventDescription, endDateTime)
   const url = getUrl({
     action: 'CalendarAddEvent',
-    userName,
+    userName: await AsyncStorage.getItem('username'),
     startDateTime,
     endDateTime,
     clientName,
@@ -57,10 +90,10 @@ export function addCalendarEvent (
   return fetch(url).then(res => res.json())
 }
 
-export function getCalendarEvents (userName: string, actionType = 'ALL', ActionDateTime: number): Promise<CalendarEvent[]> {
+export async function getCalendarEvents (activeUserName, actionType = 'ALL', ActionDateTime: number): Promise<CalendarEvent[]> {
   const url = getUrl({
     action: 'CalendarGetUserEvents',
-    userName,
+    userName: activeUserName || await AsyncStorage.getItem('username'),
     actionType,
     ActionDateTime
   })

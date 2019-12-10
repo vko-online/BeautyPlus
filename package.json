@@ -2,13 +2,13 @@
   "scripts": {
     "postinstall": "jetify",
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
+    "ios": "react-native run-ios --simulator=\"iPhone 8\"",
     "web": "expo start --web",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^2.0.0-rc.0",
+    "@react-native-community/async-storage": "^1.6.3",
     "@types/faker": "^4.1.6",
     "@types/react-native-material-dropdown": "^0.11.3",
     "@types/twix": "^0.6.38",
@@ -16,6 +16,7 @@
     "date-fns": "^2.4.1",
     "expo": "^35.0.0",
     "faker": "^4.1.0",
+    "formik": "^2.0.7",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "moment-range": "^4.0.2",
@@ -44,6 +45,7 @@
     "@babel/core": "^7.6.0",
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.57.65",
+    "@types/yup": "^0.26.26",
     "babel-preset-expo": "^7.0.0",
     "jest-expo": "^35.0.0",
     "jetifier": "^1.6.4",

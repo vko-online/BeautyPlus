@@ -7,13 +7,20 @@ import Background from 'src/components/background'
 import { Dropdown } from 'react-native-material-dropdown'
 import { Ionicons } from 'react-native-vector-icons'
 import { TextInput } from 'src/components/Inputs'
+import { Formik } from 'formik'
+import * as yup from 'yup'
+import { addService } from 'src/components/api'
+
+const schema = yup.object({
+  serviceName: yup.string().required(),
+  duration: yup.string().required()
+})
 
 interface Props {
   visible: boolean
   onDismiss: () => void
 }
 export default function ({ visible = false, onDismiss }: Props) {
-  const [duration, setDuration] = useState(initialValue.value)
   return (
     <Modal
       onDismiss={onDismiss}
@@ -22,41 +29,63 @@ export default function ({ visible = false, onDismiss }: Props) {
       contentContainerStyle={{ flex: 1 }}
     >
       <Background onDismiss={onDismiss}>
-        <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
-          <Title style={s.title}>הוספת םיפול חרש</Title>
-          <View>
-            <TextInput
-              placeholder='שם הטיפול'
-              numberOfLines={1}
-            />
-            <View style={s.multiline}>
+      <Formik
+          initialValues={{
+            serviceName: '',
+            duration: initialValue.value
+          }}
+          onSubmit={async (values) => {
+            await addService(values.serviceName, values.duration)
+            onDismiss()
+          }}
+          validationSchema={schema}
+        >
+          {({ setFieldValue, values, handleSubmit }) => (
+            <Page padding={20} justifyContent='space-evenly' backgroundColor='transparent'>
+            <Title style={s.title}>הוספת םיפול חרש</Title>
+            <View>
               <TextInput
-                placeholder='זמן םיפול'
+                placeholder='שם הטיפול'
                 numberOfLines={1}
+                value={values.serviceName}
+                onChangeText={value => setFieldValue('serviceName', value)}
               />
-              <Dropdown
-                data={data}
-                labelFontSize={16}
-                style={s.dropdown}
-                renderBase={() => (
-                  <View style={s.base}>
-                    <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
-                    <Text style={s.baseText}>20</Text>
-                  </View>
-                )}
-              />
+              <View style={s.multiline}>
+                <TextInput
+                  placeholder='זמן םיפול'
+                  numberOfLines={1}
+                />
+                <Dropdown
+                  data={data}
+                  labelFontSize={16}
+                  style={s.dropdown}
+                  value={values.duration}
+                  onChangeText={value => {
+                    console.log('duration', value)
+                    setFieldValue('duration', value)
+                  }}
+                  renderBase={() => (
+                    <View style={s.base}>
+                      <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
+                      <Text style={s.baseText}>20</Text>
+                    </View>
+                  )}
+                />
+              </View>
             </View>
-          </View>
-          <Button
-            mode='contained'
-            dark
-            style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
-            theme={{ colors: { primary: orangedark }, roundness: 5 }}
-            contentStyle={{ height: 50 }}
-          >
-            שמור
-          </Button>
-        </Page>
+            <Button
+              mode='contained'
+              dark
+              style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
+              theme={{ colors: { primary: orangedark }, roundness: 5 }}
+              contentStyle={{ height: 50 }}
+              onPress={handleSubmit}
+            >
+              שמור
+            </Button>
+          </Page>
+          )}
+        </Formik>
       </Background>
     </Modal>
   )

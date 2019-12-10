@@ -41,18 +41,18 @@ export default function ({ visible = false, onDismiss }: Props) {
     setPickerVisibility(false)
     setValue('startDateTime', date)
   }
-  const onSubmit = form => {
+  const onSubmit = async form => {
     console.log('data', form)
     const item = data.find(v => v.value === form.eventName)
     const endDateTime = moment(form.startDateTime).add(item.duration, 'minutes').toDate()
-    addCalendarEvent(
-      undefined,
+    await addCalendarEvent(
       moment(form.startDateTime).format('DDMMYYYYHHmm'),
       moment(endDateTime).format('DDMMYYYYHHmm'),
       form.clientName,
       form.eventName,
       form.eventDescription
-    ).then(onDismiss)
+    )
+    onDismiss()
   }
   console.log('errors', errors)
   return (

@@ -33,14 +33,17 @@ export default function Screen ({}: Props) {
     today,
     moment(today).add(1, 'days').toDate()
   ])
-  useEffect(() => {
+
+  async function getEvents () {
     const date = moment(dates[0]).format('DDMMYYYY')
-    const activeUser = employees.find(v => v.Id === activeId)
-    const username = activeUser ? activeUser.UserName : defaults.user
-    getCalendarEvents(username, 'ALL', Number(date)).then(data => {
-      setOrders(data)
-      setLoading(false)
-    }).catch(console.warn)
+    const activeUser = employees && employees.find(v => v.Id === activeId)
+    const data = await getCalendarEvents(activeUser && activeUser.UserName, 'ALL', Number(date))
+    setOrders(data)
+    setLoading(false)
+  }
+  useEffect(() => {
+    // tslint:disable-next-line: no-floating-promises
+    getEvents()
   }, [dates, orderVisible, activeId])
   const range = moment(dates[0]).twix(dates[dates.length - 1], { allDay: true }).format()
 
@@ -91,7 +94,7 @@ export default function Screen ({}: Props) {
               setServiceVisible(true)
               setVisibility(false)
             }}
-            title='הוספת םיפול חרש'
+            title='הוספת טיפול חדש'
             key='add service'
           />
         </Menu>
