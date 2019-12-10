@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { LegacyRef } from 'react'
 import {
   StyleSheet,
   TextInput as RNTextInput,
@@ -10,6 +10,7 @@ import { black, white, pink, gray } from 'src/constants/Colors'
 
 interface Props extends TextInputProps {
   style?: StyleProp<ViewStyle>
+  ref?: LegacyRef<RNTextInput>
 }
 export function TextInput ({ style, ...other }: Props) {
   return (

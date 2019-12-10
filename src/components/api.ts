@@ -1,8 +1,4 @@
-import { parseString } from 'react-native-xml2js'
-import moment from 'moment'
-import { get } from 'lodash'
-
-const defaults = {
+export const defaults = {
   url: 'http://www.hairsoft.co.il',
   user: 'medet',
   token: '162F6FCF3A35C84E6B288A51CA3E5FE88392E66823A869C659AC01BCBD216DA4',
@@ -22,7 +18,7 @@ function getUrl (params = {}) {
   return `${defaults.url}/api.aspx?${query}`
 }
 
-interface User {
+export interface User {
   Id: string
   UserName: string
   UserPassword: string
@@ -39,15 +35,15 @@ export function getUsers (): Promise<User[]> {
   return fetch(url).then(res => res.json()).then(res => res.response.items)
 }
 
-export function calendarAddEvent (
-  userName: string,
-  startDateTime: number,
-  endDateTime: number,
+export function addCalendarEvent (
+  userName: string = defaults.user,
+  startDateTime: string,
+  endDateTime: string,
   clientName: string,
   eventName: string,
-  eventDescription: string,
-  addbyUsername: number
+  eventDescription: string
   ): Promise<void> {
+  console.log(startDateTime, eventName, eventDescription, endDateTime)
   const url = getUrl({
     action: 'CalendarAddEvent',
     userName,
@@ -55,29 +51,38 @@ export function calendarAddEvent (
     endDateTime,
     clientName,
     eventName,
-    eventDescription,
-    addbyUsername
+    eventDescription
   })
-  return fetch(url).then(res => res.json()).then(res => res.response.items)
+  console.log('url', url)
+  return fetch(url).then(res => res.json())
 }
 
-interface GetCalendarEvents {
-  from: Date
-}
-export function getCalendarEvents ({ from }: GetCalendarEvents) {
-  
+export function getCalendarEvents (userName: string, actionType = 'ALL', ActionDateTime: number): Promise<CalendarEvent[]> {
+  const url = getUrl({
+    action: 'CalendarGetUserEvents',
+    userName,
+    actionType,
+    ActionDateTime
+  })
+  console.log('called', ActionDateTime)
+  return fetch(url)
+  .then(res => res.json())
+  .then(res => {
+    console.log('res', res)
+    return res.response.items || []
+  })
 }
 
 export interface CalendarEvent {
-  id: string
-  userId: number
-  startDate: Date
-  endDate: Date
-  clientName: string
-  serviceName: string
-  serviceDescription: string
-  addedByUserId: number
-  isLocked: boolean
-  createdDate: Date
-  color: string
+  EventId: string
+  UserId: string
+  StartDateTime: string
+  EndDateTime: string
+  ClientName: string
+  EventName: string
+  EventDescription: string
+  AddByUserId: string
+  IsLocked: string
+  CreateDateTime: Date
+  IsSMS: string
 }

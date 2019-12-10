@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { StyleSheet, View, Platform, TouchableOpacity } from 'react-native'
 import { Button, Modal, Text, Title, TextInput as RNTextInput, IconButton } from 'react-native-paper'
 import Page from 'src/components/Page'
-import Header from './header'
 import { orangedark, reddark, black, white, gray, graydark } from 'src/constants/Colors'
 import { Dropdown } from 'react-native-material-dropdown'
 import { Hpane } from 'view-on-steroids'
@@ -11,19 +10,51 @@ import { Ionicons } from 'react-native-vector-icons'
 import DateTimePicker from 'react-native-modal-datetime-picker'
 import TopBar from 'src/components/TopBar'
 import moment from 'moment'
+import { addCalendarEvent } from 'src/components/api'
+import useForm from 'react-hook-form'
+import * as yup from 'yup'
 
+const schema = yup.object({
+  userName: yup.string(),
+  phone: yup.string(),
+  startDateTime: yup.date().required(),
+  clientName: yup.string().required(),
+  eventName: yup.string().required(),
+  eventDescription: yup.string().required()
+})
 interface Props {
   visible: boolean
   onDismiss: () => void
 }
 export default function ({ visible = false, onDismiss }: Props) {
+  const { register, setValue, handleSubmit, getValues, errors } = useForm({
+    validationSchema: schema,
+    defaultValues: {
+      startDateTime: new Date(),
+      eventName: data[0].value
+    }
+  })
   const [pickerVisible, setPickerVisibility] = useState(false)
   const [orderDate, setOrderDate] = useState(new Date())
   function handleDatePicked (date) {
-    console.log('A date has been picked: ', date)
     setOrderDate(date)
     setPickerVisibility(false)
+    setValue('startDateTime', date)
   }
+  const onSubmit = form => {
+    console.log('data', form)
+    const item = data.find(v => v.value === form.eventName)
+    const endDateTime = moment(form.startDateTime).add(item.duration, 'minutes').toDate()
+    addCalendarEvent(
+      undefined,
+      moment(form.startDateTime).format('DDMMYYYYHHmm'),
+      moment(endDateTime).format('DDMMYYYYHHmm'),
+      form.clientName,
+      form.eventName,
+      form.eventDescription
+    ).then(onDismiss)
+  }
+  console.log('errors', errors)
   return (
     <Modal
       onDismiss={onDismiss}
@@ -44,18 +75,27 @@ export default function ({ visible = false, onDismiss }: Props) {
         <DateTimePicker
           isVisible={pickerVisible}
           mode='datetime'
+          is24Hour
+          minuteInterval={15}
+          ref={register({ name: 'startDateTime' })}
           onConfirm={handleDatePicked}
           onCancel={() => setPickerVisibility(false)}
         />
         <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='שם הלקוח'
+            testID='clientName'
+            ref={register({ name: 'clientName' })}
+            onChangeText={text => setValue('clientName', text)}
           />
         </View>
         <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='טלפון'
+            testID='phone'
             style={{ marginTop: 20 }}
+            ref={register({ name: 'phone' })}
+            onChangeText={text => setValue('phone', text)}
           />
         </View>
         <View style={{ paddingVertical: 15 }}>
@@ -63,6 +103,16 @@ export default function ({ visible = false, onDismiss }: Props) {
             data={data}
             labelFontSize={16}
             style={s.dropdown}
+            ref={register({ name: 'eventName' })}
+            testID='EventName'
+            onChangeText={text => {
+              console.log('text', text)
+              const item = data.find(v => v.value === text)
+              const values = getValues()
+              const startDateTime = values.startDateTime
+              setValue('eventName', text)
+              setValue('endDateTime', moment(startDateTime).add(item.duration, 'minutes').toDate())
+            }}
             renderBase={() => (
               <View style={s.base}>
                 <Ionicons name='md-arrow-dropdown' size={22} color={gray} />
@@ -74,6 +124,9 @@ export default function ({ visible = false, onDismiss }: Props) {
         <View style={{ paddingVertical: 15 }}>
           <TextInput
             placeholder='הערות'
+            testID='description'
+            ref={register({ name: 'eventDescription' })}
+            onChangeText={text => setValue('eventDescription', text)}
           />
         </View>
         <Hpane alignItems='center' flex={1}>
@@ -83,6 +136,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
             theme={{ colors: { primary: orangedark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
+            onPress={handleSubmit(onSubmit) as any}
           >
             שמור
           </Button>
@@ -92,6 +146,7 @@ export default function ({ visible = false, onDismiss }: Props) {
             style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
             theme={{ colors: { primary: reddark }, roundness: 5 }}
             contentStyle={{ height: 50 }}
+            onPress={onDismiss}
           >
             ביטול
           </Button>
@@ -102,13 +157,17 @@ export default function ({ visible = false, onDismiss }: Props) {
 }
 
 const data = [{
-  value: 'זקן לקצץ'
+  value: 'זקן לקצץ',
+  duration: 30
 }, {
-  value: 'חתך ציפורניים'
+  value: 'חתך ציפורניים',
+  duration: 40
 }, {
-  value: 'תספורת'
+  value: 'תספורת',
+  duration: 60
 }, {
-  value: 'צבע שיער'
+  value: 'צבע שיער',
+  duration: 20
 }]
 
 const s = StyleSheet.create({
