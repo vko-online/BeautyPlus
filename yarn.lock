@@ -1019,6 +1019,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@react-native-community/async-storage@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-2.0.0-rc.0.tgz#a44364a6f989a5d8ce8aaafb8798a9b6b66ed286"
+  integrity sha512-Yo9JKqkXfuV1N/lTDdph7wnmnUphSt7UbYnYk3QK+XYxzmv5lNzghtCpzoNunx3DVblAy/cYTnHeh3OZEYdtrw==
+
 "@react-native-community/cli@^1.2.1":
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-1.11.2.tgz#b14967f24a389f5a16889a747345cf0e5757a2f1"
