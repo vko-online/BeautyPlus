@@ -15,6 +15,7 @@ import Layout from 'src/constants/Layout'
 import { Ionicons } from 'react-native-vector-icons'
 import { Order } from './index'
 import { CalendarEvent, User } from 'src/components/api'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 function getRangeOfDates (start, end, key, delimeter, arr = []) {
   if (start.isAfter(end)) throw new Error('start must precede end')
@@ -36,6 +37,7 @@ interface RangeProps {
   days: Array<Date | string>
   orders: CalendarEvent[]
   delimeter: number
+  onPress: (order: CalendarEvent) => void
 }
 interface ExtractOrders {
   day: Date
@@ -49,12 +51,27 @@ function extractOrders ({ day, gr, delimeter }: ExtractOrders, orders: CalendarE
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes')),
       moment(day).set('hours', moment(gr).get('hours')).set('minutes', moment(gr).get('minutes') + delimeter),
       'minutes',
-      '[]'
+      '[)'
     )
   )
 }
-const extract = memoize<(arg: ExtractOrders, orders: CalendarEvent[]) => CalendarEvent[]>(extractOrders)
-function Range ({ group, days, orders, delimeter }: RangeProps) {
+function hashCode (str) { // java String#hashCode
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  return hash
+}
+
+function intToRGB (i) {
+  let c = (i & 0x00FFFFFF)
+      .toString(16)
+      .toUpperCase()
+
+  return '00000'.substring(0, 6 - c.length) + c
+}
+// const extract = memoize<(arg: ExtractOrders, orders: CalendarEvent[]) => CalendarEvent[]>(extractOrders)
+function Range ({ group, days, orders, delimeter, onPress }: RangeProps) {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -93,26 +110,34 @@ function Range ({ group, days, orders, delimeter }: RangeProps) {
                       )
                     } else {
                       const dayDate = day as Date
-                      const slotOrders = extract({ day: dayDate, gr, delimeter }, orders)
+                      const slotOrders = extractOrders({ day: dayDate, gr, delimeter }, orders)
                       return (
                         <View key={i} style={[s.range, indx === 0 && s.rangeFirst]}>
                           {
                             slotOrders.map((order, si) => (
-                              <View
+                              <TouchableOpacity
                                 key={si}
+                                onPress={() => onPress(order)}
                                 style={[
                                   s.slotOrder, {
-                                    backgroundColor: 'red',
+                                    backgroundColor: `#${intToRGB(hashCode(order.EventId))}`,
                                     height: timeRangeHeight * (moment(order.StartDateTime, 'DD/MM/YYYY hh:mm:ss').diff(moment(order.EndDateTime, 'DD/MM/YYYY hh:mm:ss'), 'minutes')) / delimeter
                                   }
                                 ]}
                               >
-                                <Text style={{ color: white }}>
-                                  {
-                                    order.EventName
-                                  }
-                                </Text>
-                              </View>
+                                <Vpane width={80 / slotOrders.length}>
+                                  <Text style={{ color: white, fontWeight: 'bold', fontSize: 10 }} numberOfLines={1}>
+                                    {
+                                      slotOrders.length > 1 ? null : `${order.IsLocked === '1' ? '🔒' : ''} ${moment(order.StartDateTime, 'DD/MM/YYYY hh:mm:ss').format('hh:mm')} - ${moment(order.EndDateTime, 'DD/MM/YYYY hh:mm:ss').format('hh:mm')}`
+                                    }
+                                  </Text>
+                                  <Text style={{ color: white, fontSize: 12 }} numberOfLines={1}>
+                                    {
+                                      slotOrders.length > 1 ? null : order.ClientName
+                                    }
+                                  </Text>
+                                </Vpane>
+                              </TouchableOpacity>
                             ))
                           }
                         </View>
@@ -135,9 +160,10 @@ interface Props {
   orders: CalendarEvent[]
   employees: User[]
   id: string
+  onPress: (order: CalendarEvent) => void
   onSet: (id: string) => void
 }
-export default function ({ employees, delimeter, dates, showSingle, orders, id, onSet }: Props) {
+export default function ({ employees, delimeter, dates, showSingle, orders, id, onSet, onPress }: Props) {
   const date = new Date()
   const startOfDay = moment(date).set('hour', 7).set('minute', 60 - delimeter)
   const endOfDay = moment(date).set('hour', 23).set('minute', 60 - delimeter)
@@ -274,6 +300,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
         orders={orders}
         days={days}
         delimeter={delimeter}
+        onPress={onPress}
       />
     </Vpane>
   )
@@ -295,11 +322,11 @@ const s = StyleSheet.create({
     fontFamily: 'LevenimMT-Bold'
   },
   slotOrder: {
-    width: width / 3,
+    flex: 1,
     padding: 5,
-    borderRadius: 4,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: 'black'
+    borderRadius: 4
+    // borderWidth: StyleSheet.hairlineWidth,
+    // borderColor: 'black'
   },
   timerange: {
     borderTopWidth: StyleSheet.hairlineWidth,
@@ -317,6 +344,7 @@ const s = StyleSheet.create({
     justifyContent: 'center'
   },
   range: {
+    flexDirection: 'row',
     width: width / 3,
     height: timeRangeHeight,
     minHeight: timeRangeHeight,

@@ -69,17 +69,43 @@ export async function addService (serviceName, duration) {
   return fetch(url).then(res => res.json())
 }
 
+export async function updateCalendarEvent ({
+  eventId,
+  startDateTime,
+  endDateTime,
+  clientName,
+  userId,
+  eventName,
+  eventDescription
+}) {
+  const url = getUrl({
+    action: 'CalendarUpdateEvent',
+    eventId,
+    userId,
+    startDateTime,
+    endDateTime,
+    clientName,
+    eventName,
+    eventDescription
+  })
+  return fetch(url).then(res => res.json())
+}
+
 export async function addCalendarEvent (
+  userName: string,
   startDateTime: string,
   endDateTime: string,
   clientName: string,
   eventName: string,
   eventDescription: string
   ): Promise<void> {
-  console.log(startDateTime, eventName, eventDescription, endDateTime)
+  let usr = await AsyncStorage.getItem('username')
+  if (userName) {
+    usr = userName
+  }
   const url = getUrl({
     action: 'CalendarAddEvent',
-    userName: await AsyncStorage.getItem('username'),
+    userName: usr,
     startDateTime,
     endDateTime,
     clientName,
@@ -97,7 +123,6 @@ export async function getCalendarEvents (activeUserName, actionType = 'ALL', Act
     actionType,
     ActionDateTime
   })
-  console.log('called', ActionDateTime)
   return fetch(url)
   .then(res => res.json())
   .then(res => {
