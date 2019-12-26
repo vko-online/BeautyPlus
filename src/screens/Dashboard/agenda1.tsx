@@ -197,7 +197,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
+                <Text style={{ color: '#87CEFA' }}>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               <Vpane
                 paddingTop={10}
@@ -207,7 +207,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
+                <Text style={{ color: '#87CEFA' }}>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               <Vpane
                 paddingTop={10}
@@ -217,7 +217,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
+                <Text style={{ color: '#87CEFA' }}>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
             </Hpane>
           ) : (
@@ -233,7 +233,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                       opacity={0.5}
                       width={(Layout.window.width - timeRangeWidth) / 3}>
                       <Ionicons name='ios-contact' size={30} />
-                      <Text>{employee.UserName}</Text>
+                      <Text style={{ color: '#87CEFA' }}>{employee.UserName}</Text>
                     </Vpane>
                   </TouchableRipple>
                 ))
@@ -246,7 +246,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                 opacity={1}
                 width={(Layout.window.width - timeRangeWidth) / 3}>
                 <Ionicons name='ios-contact' size={30} />
-                <Text>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
+                <Text style={{ color: '#87CEFA' }}>{activeEmployee ? activeEmployee.UserName : 'Loading'}</Text>
               </Vpane>
               {
                 otherEmployees.slice(1).map((employee, index) => (
@@ -259,7 +259,7 @@ export default function ({ employees, delimeter, dates, showSingle, orders, id, 
                       opacity={0.5}
                       width={width / 3}>
                       <Ionicons name='ios-contact' size={30} />
-                      <Text>{employee.UserName}</Text>
+                      <Text style={{ color: '#87CEFA' }}>{employee.UserName}</Text>
                     </Vpane>
                   </TouchableRipple>
                 ))
