@@ -11,13 +11,14 @@ import Agenda from './agenda1'
 import Timerange from './timerange'
 import moment from 'moment'
 import 'twix'
-import { defaults, getCalendarEvents, CalendarEvent, getUsers, User } from 'src/components/api'
+import { getCalendarEvents, CalendarEvent, getUsers, User } from 'src/components/api'
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
 }
 const today = new Date()
 export default function Screen ({}: Props) {
+  const [selectedOrder, setSelectedOrder] = useState(null)
   const [loading, setLoading] = useState(true)
   const [employees, setEmployees] = useState<User[]>([])
   const [activeId, setId] = useState(null)
@@ -26,7 +27,7 @@ export default function Screen ({}: Props) {
   const [clientVisible, setClientVisible] = useState(false)
   const [orderVisible, setOrderVisible] = useState(false)
   const [serviceVisible, setServiceVisible] = useState(false)
-  const [delimeter, setDelimeter] = useState(20)
+  const [delimeter, setDelimeter] = useState(15)
   const [todayView, setTodayView] = useState(false)
   const [dates, setDates] = useState([
     moment(today).add(-1, 'days').toDate(),
@@ -70,7 +71,10 @@ export default function Screen ({}: Props) {
         text={todayView ? moment(dates[1]).format('MMM DD') : range}
         onLeft={goBack}
         onRight={goForward}
-        onAdd={() => setOrderVisible(true)}
+        onAdd={() => {
+          setSelectedOrder(null)
+          setOrderVisible(true)
+        }}
         onToday={() => setTodayView(!todayView)}
         todayIcon={todayView ? 'calendar-today' : 'calendar-week'}
       >
@@ -102,7 +106,7 @@ export default function Screen ({}: Props) {
       <Portal>
         <AddClient visible={clientVisible} onDismiss={() => setClientVisible(false)} />
         <AddService visible={serviceVisible} onDismiss={() => setServiceVisible(false)} />
-        <AddOrder visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
+        <AddOrder selectedOrder={selectedOrder} visible={orderVisible} onDismiss={() => setOrderVisible(false)} />
       </Portal>
       <Page>
         <Timerange delimeter={delimeter} setDelimeter={setDelimeter} />
@@ -116,6 +120,10 @@ export default function Screen ({}: Props) {
               orders={orders}
               delimeter={delimeter}
               dates={dates}
+              onPress={order => {
+                setSelectedOrder(order)
+                setOrderVisible(true)
+              }}
               employees={employees}
               showSingle={todayView}
               id={activeId}
